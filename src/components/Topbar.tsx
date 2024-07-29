@@ -1,5 +1,5 @@
 "use client";
-import { Check, CircleHelp, DropletIcon, MenuIcon, X } from "lucide-react";
+import { Check, CircleHelp, DropletIcon, Mail, MenuIcon, Phone, X } from "lucide-react";
 import { ReactNode, useState } from "react";
 
 import {
@@ -48,27 +48,42 @@ import { useInView } from "react-intersection-observer";
 export function TopBar() {
   // md:max-w-screen-xl
 
+  // TODO: BUG where if you scroll right on view change point it loops
+
   const { ref, inView, entry } = useInView({
+    initialInView: true,
     /* Optional options */
     threshold: 0,
   });
 
+  console.log("dfskf")
+  console.log(inView)
+
+  // 90px
+  //h-[${inView ? 110 : 90}px]
+
   return (
     <>
-      <div className="flex items-center h-12 w-full bg-white border-b border-solid border-border">
+      <div ref={ref} className="flex items-center h-12 w-full bg-white border-b border-solid border-border">
         <div className="w-full flex justify-center pl-8 pr-8">
           <div className="w-full  md:max-w-screen-xl">
-            <div className="flex items-center space-x-2  ">
-              <p className="text-sm text-">Info@cleanelite.co.uk</p>
+            <div className="flex items-center space-x-2">
+              <div className="flex space-x-2 items-center">
+                <Mail className="w-4 h-4" />
+                <p className="text-xs ">Info@cleanelite.co.uk</p>
+              </div>
               <Separator orientation="vertical" className="h-6" />
-              <p className="text-sm">01932 847798</p>
+              <div className="flex space-x-2 items-center">
+                <Phone className="w-4 h-4" />
+                <p className="text-xs">01932 847798</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="sticky z-50 top-0 w-full" ref={ref}>
+      <div className="sticky z-50 top-0 w-full" >
         <div className="bg-white flex flex-col items-center justify-center w-full space-y-2 z-50 relative ">
-          <div className="flex items-center justify-center w-full h-[110px] pl-8 pr-8 ">
+          <div style={{ height: (inView ? 110 : 90) }} className={`flex items-center justify-center w-full pl-8 pr-8 `}>
             <div className="flex items-center justify-between md:max-w-screen-xl w-full ">
               {/* <div className="w-44 flex justify-start">
                 <Button size="icon" variant="ghost">
@@ -135,23 +150,43 @@ export function TopBar() {
                   //   setSubcategory1(0);
                   // }}
                   >
-                    <NavigationMenuTrigger className="">
-                      Projects
+                    <NavigationMenuTrigger className="" >
+                      <Link
+                        href="/sectors"
+                        legacyBehavior
+                        passHref
+                        className="w-full"
+                      >
+                        Sectors
+                      </Link>
+
                     </NavigationMenuTrigger>
                     <NavigationMenuContent className="">
-                      <div className="w-[200px] flex ">
-                        <ul className="w-1/3 grid gap-1 p-4 md:grid-rows-3 md:grid-cols-1">
-                          <NavigationMenuLink>Commercial</NavigationMenuLink>
-                          <NavigationMenuLink>Educational</NavigationMenuLink>
-                          <NavigationMenuLink>
+                      <div className="w-[600px] flex ">
+                        <ul className="w-full grid gap-1 p-4 md:grid-rows-2 md:grid-cols-3">
+                          <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start")}
+                          >Commercial</NavigationMenuLink>
+                          <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start")}
+                          >Education</NavigationMenuLink>
+                          <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start")}
+                          >
+                            Leisure
+                          </NavigationMenuLink>
+                          {/* <NavigationMenuLink>
                             Hotel & Leisure
+                          </NavigationMenuLink> */}
+                          <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start")}
+                          >Health</NavigationMenuLink>
+                          <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start")}
+                          >
+                            Accommodation
                           </NavigationMenuLink>
-                          <NavigationMenuLink>Health Sector</NavigationMenuLink>
-                          <NavigationMenuLink>
+                          {/* <NavigationMenuLink>
                             Student accommodation
-                          </NavigationMenuLink>
-                          <NavigationMenuLink>Residential</NavigationMenuLink>
-                          <NavigationMenuLink>Retail</NavigationMenuLink>
+                          </NavigationMenuLink> */}
+                          {/* <NavigationMenuLink>Residential</NavigationMenuLink> */}
+                          <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start")}
+                          >Retail</NavigationMenuLink>
                         </ul>
                       </div>
                     </NavigationMenuContent>
@@ -217,7 +252,7 @@ export function TopBar() {
           {/* <Button variant="secondary">Button hellllloooo</Button> */}
         </div>
         <div className="w-full z-1  h-3 absolute bottom-0 shadow-[0_0_10px_1px_rgba(0,0,0,0.1)] " />
-      </div>
+      </div >
     </>
   );
 }

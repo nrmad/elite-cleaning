@@ -16,6 +16,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { Montserrat } from "next/font/google";
 import { Separator } from "@/components/ui/separator";
+import { ChevronRight, ClipboardList, Mail } from "lucide-react";
+import Image from "next/image";
+
 
 export default function Contact() {
   // just noticed the topbar should shrink on sticky motion
@@ -56,59 +59,82 @@ export default function Contact() {
               </TypographyH4>
             </AnimateComponent>
           </div>
-          <div className="w-full h-10 "></div>
+          <AnimateComponent
+            className="w-full h-[200px] relative overflow-visible flex flex-col space-y-4 pt-4 "
+            variants={{
+              start: { opacity: 0 },
+              end: { opacity: 1 },
+            }}
+          >
+            <Image src="/undraw-contact-us.svg" alt="world" fill />
+          </AnimateComponent>
           <div className="w-full h-5">
             <Separator className="w-full " />
           </div>
-          <div className="w-full flex">
-            <div className="w-1/2"></div>
+          <div className="w-full flex space-x-16">
             <div className="w-1/2">
               <AnimateComponent
+                className="overflow-visible"
                 variants={{
                   start: { opacity: 0 },
                   end: { opacity: 1 },
                 }}
               >
-                <Card className="w-full">
-                  {/* <CardHeader>
-                <CardTitle>Create project</CardTitle>
-                <CardDescription>
-                  Deploy your new project in one-click.
-                </CardDescription>
-              </CardHeader> */}
-                  <CardContent>
-                    <form>
-                      <div className="w-full flex flex-col pt-4 space-y-4">
-                        <div className="flex flex-col space-y-1.5">
-                          <Label htmlFor="name">Name</Label>
-                          <Input id="name" placeholder="Your name" />
-                        </div>
-                        <div className="flex flex-col space-y-1.5 ">
-                          <Label htmlFor="email">Email</Label>
-                          <Input
-                            id="email"
-                            type="email"
-                            placeholder="Your email"
-                          />
-                        </div>
-                        <div className="flex flex-col space-y-1.5 ">
-                          <Label htmlFor="message">Message</Label>
-                          <Textarea id="message" placeholder="Your message" />
-                        </div>
-                      </div>
-                    </form>
-                  </CardContent>
-                  <CardFooter className="flex justify-between">
-                    <Button>Send message</Button>
-                  </CardFooter>
-                </Card>
+                <div className="w-full flex flex-col pt-4 space-y-4 ">
+                  <span className="flex items-center space-x-1.5">
+                    {/* <Mail className="w-5 h-5" /> */}
+                    <TypographyH4 className="mb-4">Get in touch</TypographyH4></span>
+                  {/* <div className="flex flex-col space-y-1.5">
+                    <Label htmlFor="name" className="text-sm">Name</Label>
+                    <Input id="name" placeholder="Your name" />
+                  </div> */}
+                  <div className="flex flex-col space-y-1.5 ">
+                    <Label htmlFor="email">Email address</Label>
+                    <Input
+                      className="bg-white/1"
+                      id="email"
+                      type="email"
+                      placeholder="Enter email address"
+                    />
+                  </div>
+                  <div className="flex flex-col space-y-1.5 ">
+                    <Label htmlFor="message">Tell us how we can help</Label>
+                    <Textarea id="message" placeholder="Enter your message" />
+                  </div>
+                  <Button className="w-fit rounded-full">Submit <ChevronRight className="w-4 h-4" /></Button>
+                </div>
+
               </AnimateComponent>
             </div>
+            <AnimateComponent
+              className="overflow-visible w-1/2 flex flex-col space-y-4 pt-4 "
+              variants={{
+                start: { opacity: 0 },
+                end: { opacity: 1 },
+              }}
+            >
+              <TypographyH4 className="mb-4">Contact details</TypographyH4>
+              <div>
+                <p className="text-sm text-muted-foreground"> Get help</p>
+                <span className="flex items-center w-fit space-x-1.5 group"><p className="text-sm">Info@cleanelite.co.uk</p><span className="invisible group-hover:visible cursor-pointer"><ClipboardList className="w-4 h-4" /></span></span>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Call us</p>
+                <span className="flex items-center w-fit space-x-1.5 group"><p className="text-sm">07917 821658
+                </p><span className="invisible group-hover:visible cursor-pointer"><ClipboardList className="w-4 h-4" /></span></span>
+              </div>
+              <div>
+                <p className="text-sm text-muted-foreground">Address</p>
+                <span className="flex items-center w-fit space-x-1.5 group"><p className="text-sm">Elite Cleaning Services (Surrey) LImited Unit 21 Investment House 28 Queens Road Weybridge Surrey KT13 9UT
+                </p><span className="invisible group-hover:visible cursor-pointer"><ClipboardList className="w-4 h-4" /></span></span>
+              </div>
+            </AnimateComponent>
+
           </div>
-          <div className="w-full h-10 border border-solid border-red-500"></div>
+          <div className="w-full h-10 "></div>
         </div>
       </div>
       <Footer />
-    </main>
+    </main >
   );
 }

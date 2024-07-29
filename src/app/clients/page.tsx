@@ -25,6 +25,9 @@ import { ImageWidget } from "@/components/ImageWidget";
 export default function Clients() {
   // just noticed the topbar should shrink on sticky motion
 
+  // TODO: RESIZE AND ACTIVATE LOGO LINKS SWAPPING OUT RYDONS GROSS LOGO
+  // TODO: LOGOS SAME HEIGHT LOOKS GOOD
+
   return (
     <main className="flex min-h-screen flex-col items-center">
       <TopBar />
@@ -63,7 +66,25 @@ export default function Clients() {
             </AnimateComponent>
           </div>
 
-          <div className="w-full h-[200px] "></div>
+          <div className="w-full h-[500px] ">
+            <AnimateComponent
+              className="w-full flex flex-col items-center justify-center"
+              // transition={{
+              //   type: "spring",
+              //   bounce: 0,
+              //   duration: 0.6,
+              //   delay: 0.3,
+              // }}
+              variants={{
+                start: { opacity: 0 },
+                end: { opacity: 1 },
+              }}
+            >
+              <div className="w-full h-[400px] relative">
+                <Image src="/undraw-experts.svg" alt="world" fill />
+              </div>
+            </AnimateComponent>
+          </div>
           <AnimateComponent
             // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
             variants={{
@@ -75,7 +96,7 @@ export default function Clients() {
               <ImageWidget
                 name="mclaren"
                 url="/mclaren-logo-testy.svg"
-                // width={80}
+              // width={80}
               />
               <ImageWidget
                 name="bowmer-kirkland"

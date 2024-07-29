@@ -18,7 +18,8 @@ export function Footer(props: MyProps) {
 
   // below left aligned details and link for app
   return (
-    <div className="w-full bg-primary h-96 flex flex-col justify-between pt-20">
+    <div className="w-full bg-theme h-96 flex flex-col justify-between pt-20">
+      {/* <div className="w-10 h-10 bg-[#01456a] border-black border-solid "></div> */}
       <div className="w-full flex justify-center pl-8 pr-8">
         <div className="w-full  max-w-screen-xl flex space-x-24 ">
           <div className="w-1/5 text-primary-foreground flex flex-col ">

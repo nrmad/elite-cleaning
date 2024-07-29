@@ -1,6 +1,6 @@
 "use client";
 
-import { useMotionValue, useSpring, useMotionValueEvent } from "framer-motion";
+import { useMotionValue, useSpring, useMotionValueEvent, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 export function AnimateNumber({
@@ -12,11 +12,13 @@ export function AnimateNumber({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, { damping: 20, stiffness: 100 });
+  const springValue = useSpring(motionValue, { damping: 20, stiffness: 80 });
+  const isInView = useInView(ref, { once: true })
 
   useEffect(() => {
-    motionValue.set(value);
-  }, [motionValue, value]);
+    if (isInView)
+      motionValue.set(value);
+  }, [motionValue, value, isInView]);
 
   //   useEffect(
   //     () =>

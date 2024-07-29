@@ -8,6 +8,7 @@ interface PropTypes {
   width?: number;
   height?: number;
   className?: string;
+  variant?: "ghost" | "link" | "default" | "destructive" | "outline" | "secondary";
 }
 
 export function ImageWidget({
@@ -16,19 +17,20 @@ export function ImageWidget({
   className = "",
   width = 150,
   height = 90,
+  variant = "link"
 }: PropTypes) {
   return (
-    <Button variant="ghost" className="w-fit h-fit ">
+    <Button variant={variant} className="w-fit h-fit ">
       <div style={{ width: width, height: height }} className={`relative `}>
         <Image
           src={url}
           alt={name}
           fill
           className={cn("fill-black", className)}
-          // objectFit={"cover"}
+        // objectFit={"cover"}
         />
-      </div>
-    </Button>
+      </div >
+    </Button >
   );
 }
 

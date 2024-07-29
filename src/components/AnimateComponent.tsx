@@ -1,5 +1,6 @@
 "use client";
 
+import { cn } from "@/lib/utils";
 import { motion, Variants, Transition } from "framer-motion";
 import { ReactNode } from "react";
 
@@ -47,22 +48,22 @@ const AnimateComponent = ({
 
   return (
     <motion.div
-      className={className}
-      style={{ overflow: "hidden", display: "flex" }}
+      className={cn("overflow-hidden", className)}
+      style={{ display: "flex" }}
       // variants={container}
       // initial="hidden"
       // animate="visible"
 
-      whileInView="visible"
+      whileInView="end"
       viewport={{ once: true }}
       initial="start"
-      animate="end"
+      // animate="end"
       transition={transition}
       variants={variants}
 
-      // initial={initial}
-      // animate={animate}
-      // transition={transition}
+    // initial={initial}
+    // animate={animate}
+    // transition={transition}
     >
       {children}
     </motion.div>

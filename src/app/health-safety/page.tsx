@@ -20,7 +20,7 @@ import { TypographyP } from "@/components/ui/typographyP";
 import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { AvatarUser } from "@/components/AvatarUser";
-import { ClientWidget } from "@/components/ImageWidget";
+import { ImageWidget } from "@/components/ImageWidget";
 
 export default function HealthSafety() {
   // just noticed the topbar should shrink on sticky motion
@@ -60,15 +60,15 @@ export default function HealthSafety() {
                 </div>
                 <Separator />
                 <AnimateComponent
-                  transition={{
-                    type: "spring",
-                    bounce: 0,
-                    duration: 0.6,
-                    delay: 0.3,
-                  }}
+                  // transition={{
+                  //   type: "spring",
+                  //   bounce: 0,
+                  //   duration: 0.6,
+                  //   delay: 0.3,
+                  // }}
                   variants={{
-                    start: { opacity: 0, y: 25 },
-                    end: { opacity: 1, y: 0 },
+                    start: { opacity: 0 },
+                    end: { opacity: 1 },
                   }}
                 >
                   <div>
@@ -101,22 +101,22 @@ export default function HealthSafety() {
               <AnimateComponent
                 // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
                 variants={{
-                  start: { opacity: 0, x: 25 },
-                  end: { opacity: 1, x: 0 },
+                  start: { opacity: 0 },
+                  end: { opacity: 1 },
                 }}
               >
                 <TypographyH3 className=" ">Accreditation</TypographyH3>
               </AnimateComponent>
               <AnimateComponent
-                transition={{
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.6,
-                  delay: 0.3,
-                }}
+                // transition={{
+                //   type: "spring",
+                //   bounce: 0,
+                //   duration: 0.6,
+                //   delay: 0.3,
+                // }}
                 variants={{
-                  start: { opacity: 0, y: 25 },
-                  end: { opacity: 1, y: 0 },
+                  start: { opacity: 0 },
+                  end: { opacity: 1 },
                 }}
               >
                 <div>
@@ -140,28 +140,29 @@ export default function HealthSafety() {
                   </TypographyP>
                 </div>
               </AnimateComponent>
+
             </div>
             <Separator />
             <div className="w-full flex flex-col space-y-4">
               <AnimateComponent
                 // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
                 variants={{
-                  start: { opacity: 0, x: 25 },
-                  end: { opacity: 1, x: 0 },
+                  start: { opacity: 0 },
+                  end: { opacity: 1 },
                 }}
               >
                 <TypographyH3 className=" ">Operatives</TypographyH3>
               </AnimateComponent>
               <AnimateComponent
-                transition={{
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.6,
-                  delay: 0.3,
-                }}
+                // transition={{
+                //   type: "spring",
+                //   bounce: 0,
+                //   duration: 0.6,
+                //   delay: 0.3,
+                // }}
                 variants={{
-                  start: { opacity: 0, y: 25 },
-                  end: { opacity: 1, y: 0 },
+                  start: { opacity: 0 },
+                  end: { opacity: 1 },
                 }}
               >
                 <div>
@@ -188,22 +189,22 @@ export default function HealthSafety() {
               <AnimateComponent
                 // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
                 variants={{
-                  start: { opacity: 0, x: 25 },
-                  end: { opacity: 1, x: 0 },
+                  start: { opacity: 0 },
+                  end: { opacity: 1 },
                 }}
               >
                 <TypographyH3 className=" ">Practices</TypographyH3>
               </AnimateComponent>
               <AnimateComponent
-                transition={{
-                  type: "spring",
-                  bounce: 0,
-                  duration: 0.6,
-                  delay: 0.3,
-                }}
+                // transition={{
+                //   type: "spring",
+                //   bounce: 0,
+                //   duration: 0.6,
+                //   delay: 0.3,
+                // }}
                 variants={{
-                  start: { opacity: 0, y: 25 },
-                  end: { opacity: 1, y: 0 },
+                  start: { opacity: 0 },
+                  end: { opacity: 1 },
                 }}
               >
                 <div>
@@ -222,6 +223,41 @@ export default function HealthSafety() {
                 </div>
               </AnimateComponent>
             </div>
+            <Separator />
+
+            <AnimateComponent
+              className="w-full flex justify-between items-center "
+              transition={{ type: "spring", bounce: 0, duration: 0.6 }}
+              variants={{
+                start: { opacity: 0, },
+                end: { opacity: 1 },
+              }}
+            >
+              <ImageWidget
+                url="/chas-logo.svg"
+                name="chas"
+                className="object-contain "
+                height={100}
+                width={225}
+              />
+              <ImageWidget
+                url="/constructionline-gold-logo.svg"
+                name="constructionline"
+                className="object-contain "
+                height={100}
+                width={225}
+              />
+
+              <ImageWidget
+                url="/achilles-logo.svg"
+                name="chas"
+                className="object-contain "
+                height={100}
+                width={225}
+              />
+
+
+            </AnimateComponent>
           </div>
         </div>
       </div>
