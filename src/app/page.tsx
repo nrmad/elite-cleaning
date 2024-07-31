@@ -24,16 +24,20 @@ export default function Home() {
   // animate reviews and services
   // !!! TODO: improve logo sizing to be identical
   // !!! TODO: add products and historic jobs
+  // !!! TODO: GRADIENT OPACITY DELAY
 
   return (
     <main className="flex min-h-screen flex-col items-center">
       <TopBar />
       <div className="w-full relative z-[-1] md:h-[400px] lg:h-[500px] 2xl:h-[600px] bg-[url('/banner1.jpg')] bg-center bg-cover ">
+
+        <Box className="absolute left-0 right-0 bottom-0 h-[800px] clip-complex-polygon" />
+
         <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-60" />
         <div className=" flex items-center justify-center h-full w-full relative ">
           <div className="w-full max-w-screen-xl ">
             <div className="relative ml-8 flex flex-col h-[124px] text-primary-foreground ">
-              <Box className="absolute  lg:h-[330px] 2xl:h-[375px] p-8 w-fit">
+              <div className="absolute  lg:h-[330px] 2xl:h-[375px] p-8 w-fit">
                 <AnimateComponent
                   // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
                   variants={{
@@ -63,7 +67,7 @@ export default function Home() {
                     </span>
                   </TypographyH2>
                 </AnimateComponent>
-              </Box>
+              </div>
             </div>
           </div>
         </div>
@@ -113,7 +117,7 @@ export default function Home() {
                     end: { opacity: 1 },
                   }}
                 >
-                  <Card className="flex flex-col space-y-2 text-center justify-center items-center  w-full h-fit p-10">
+                  <Card className="flex flex-col space-y-2 text-center justify-center items-center  w-full h-fit p-10 ">
                     <div className="rounded-full bg-theme/20 p-5 mb-8">
                       <PackageCheck className="w-6 h-6 stroke-theme/70" />
                     </div>
@@ -133,12 +137,12 @@ export default function Home() {
                     end: { opacity: 1 },
                   }}
                 >
-                  <Card className="flex flex-col space-y-2 text-center justify-center  items-center w-full h-fit p-10">
+                  <Card className="flex flex-col space-y-2 text-center justify-center  items-center w-full h-fit p-10 ">
                     <div className="rounded-full bg-theme/20  p-5 mb-8">
                       <UsersRound className="w-6 h-6 stroke-theme/70" />
                     </div>
                     <TypographyH2 className="text-5xl font-semibold">
-                      <AnimateNumber value={340} suffix="+" />
+                      <AnimateNumber value={350} suffix="+" />
                     </TypographyH2>
 
                     <p className="font-medium text-muted-foreground" >Satisfied clients</p>
@@ -152,7 +156,7 @@ export default function Home() {
                     end: { opacity: 1 },
                   }}
                 >
-                  <Card className="flex flex-col space-y-2 text-center justify-center  items-center w-full h-fit p-10">
+                  <Card className="flex flex-col space-y-2 text-center justify-center  items-center w-full h-fit p-10 ">
                     <div className="rounded-full bg-theme/20  p-5 mb-8">
                       <CalendarCheck className="w-6 h-6 stroke-theme/70" />
                     </div>
@@ -306,7 +310,7 @@ export default function Home() {
 
         </div>
       </div>
-      <div className="w-full">
+      <div className="w-full space-y-32">
         <AnimateComponent
           transition={{ type: "spring", bounce: 0, duration: 0.6 }}
           variants={{
@@ -364,110 +368,163 @@ export default function Home() {
 
           </div>
         </AnimateComponent>
-      </div>
-      <div className="  pl-8 pr-8 pt-32 pb-32 flex flex-col space-y-8 z-10 w-full max-w-screen-xl overflow-visible">
-        <div className="w-full flex flex-col space-y-32 justify-center overflow-visible">
-          <div className="w-full flex flex-col  space-y-16 justify-center items-center overflow-visible ">
-            <div className="w-full flex flex-col  justify-center items-center overflow-visible">
-              <div className=" w-2/5 ">
-                <AnimateComponent
-                  className="w-full justify-start"
-                  transition={{ type: "spring", bounce: 0, duration: 0.6 }}
-                  variants={{
-                    start: { opacity: 0, y: 25 },
-                    end: { opacity: 1, y: 0 },
-                  }}
-                >
-                  <TypographyH2 className="">Our services</TypographyH2>
-                </AnimateComponent>
-                <AnimateComponent
-                  className="w-full justify-center"
-                  transition={{ type: "spring", bounce: 0, duration: 0.6, delay: 0.2 }}
-                  variants={{
-                    start: { opacity: 0, y: 25 },
-                    end: { opacity: 1, y: 0 },
-                  }}
-                >
-                  <p className="mt-0 ">
-                    We can provide multiple services which fit the requirements of different projects. We can be tailor them to client needs.
-                  </p>
-                </AnimateComponent>
-              </div>
+        <div className="w-full flex flex-col  space-y-16 justify-center items-center overflow-visible ">
+          <div className="w-full flex flex-col  justify-center items-center overflow-visible">
+            <div className=" w-2/5 ">
+              <AnimateComponent
+                className="w-full justify-start"
+                transition={{ type: "spring", bounce: 0, duration: 0.6 }}
+                variants={{
+                  start: { opacity: 0, y: 25 },
+                  end: { opacity: 1, y: 0 },
+                }}
+              >
+                <TypographyH2 className="">Our services</TypographyH2>
+              </AnimateComponent>
+              <AnimateComponent
+                className="w-full justify-center"
+                transition={{ type: "spring", bounce: 0, duration: 0.6, delay: 0.2 }}
+                variants={{
+                  start: { opacity: 0, y: 25 },
+                  end: { opacity: 1, y: 0 },
+                }}
+              >
+                <p className="mt-0 ">
+                  We can provide multiple services which fit the requirements of different projects. We can be tailor them to client needs.
+                </p>
+              </AnimateComponent>
             </div>
-            <AnimateComponent
-              className="w-full overflow-visible"
-              transition={{ type: "spring", bounce: 0, duration: 0.6 }}
-              variants={{
-                start: { opacity: 0, },
-                end: { opacity: 1 },
-              }}
-            >
-              <div className="  w-full grid  gap-4 grid-cols-2 grid-rows-2 h-[600px] overflow-visible">
-                <Box className="w-full flex flex-col p-8 items-center justify-center  space-y-8  ">
+          </div>
+          <AnimateComponent
+            className="w-full overflow-visible"
+            transition={{ type: "spring", bounce: 0, duration: 0.6 }}
+            variants={{
+              start: { opacity: 0, },
+              end: { opacity: 1 },
+            }}
+          >
+            <div className="relative w-full flex items-center justify-center overflow-visible pt-8 pb-8  ">
+              <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-background  via-theme/25  via-90% to-background  to-90% " />
+              <div className="h-[600px] w-full max-w-screen-xl  grid  gap-4 grid-cols-3 grid-rows-2 ">
+                <Box className="w-full flex flex-col p-8 items-center justify-center  space-y-8 ">
                   <div className="flex flex-col  justify-center space-y-2">
-                    <div className="w-full flex justify-center">
-                      <div className="relative w-36 h-36  bg-white/60 rounded-full overflow-hidden ">
-                        <Image src="/undraw-done.svg" alt="qa" fill />
-                      </div>
-                    </div>
-                    <span className="flex items-center space-x-2">
-                      <PaintBucket className="w-5 h-5  stroke-theme" />
-                      <TypographyH3 className="text-theme">Base</TypographyH3>
-                    </span>
-                    <p className="ml-8 ">
-                      Our base clean provides a thorough, eco-friendly initial cleaning for businesses, ensuring a pristine start every time.
 
-                    </p>
+                    <div className="w-fit flex mb-8 border border-solid border-theme/20 p-4 rounded-full">
+                      <PaintBucket className="w-5 h-5  stroke-theme/70" />
+
+                      {/* <div className="relative w-36 h-36  bg-white/60 rounded-full overflow-hidden ">
+                        <Image src="/undraw-done.svg" alt="qa" fill />
+                      </div> */}
+                    </div>
+
+                    <div className="w-full space-y-2">
+                      <span className="flex items-center space-x-2">
+                        <TypographyH3 className="">Base</TypographyH3>
+                      </span>
+                      <p className=" ">
+                        Our base clean provides a thorough, eco-friendly initial cleaning for businesses, ensuring a pristine start every time.
+
+                      </p>
+                    </div>
                   </div>
                 </Box>
-                <Box className="w-full flex flex-col p-8 items-center justify-center  space-y-8  ">
+
+                <Box className="w-full flex flex-col p-8 items-center justify-center  space-y-8 ">
                   <div className="flex flex-col  justify-center space-y-2">
-                    <div className="w-full flex justify-center">
-                      <div className="relative w-36 h-36  bg-white/60 rounded-full overflow-hidden">
-                        <Image src="/undraw-apartment-rent.svg" alt="qa" fill />
-                      </div>
+
+                    <div className="w-fit flex mb-8 border border-solid border-theme/20 p-4 rounded-full">
+                      <IterationCw className="w-5 h-5  stroke-theme/70" />
+
+                      {/* <div className="relative w-36 h-36  bg-white/60 rounded-full overflow-hidden ">
+                        <Image src="/undraw-done.svg" alt="qa" fill />
+                      </div> */}
                     </div>
                     <span className="flex items-center space-x-2">
-                      <IterationCw className="w-5 h-5  stroke-theme" />
-                      <TypographyH3 className="text-theme">Reclean</TypographyH3>
+                      <TypographyH3 className="">Reclean</TypographyH3>
                     </span>
-                    <p className="ml-8 ">
+                    <p className=" ">
                       Recleans offers meticulous, eco-friendly cleaning services for businesses. Experience spotless results with every visit.
 
                     </p>
                   </div>
                 </Box>
-                <Box className="w-full flex flex-col p-8 items-center justify-center  space-y-8  ">
-                  <div className="flex flex-col justify-center space-y-2">
-                    <div className="w-full flex justify-center">
-                      <div className="relative w-36 h-36 bg-white/60 rounded-full overflow-hidden">
-                        <Image src="/undraw-qa-engineer.svg" alt="qa" fill />
-                      </div>
-                    </div>
 
+                <Box className="w-full flex flex-col p-8 items-center justify-center  space-y-8 ">
+                  <div className="flex flex-col  justify-center space-y-2">
+
+                    <div className="w-fit flex mb-8 border border-solid border-theme/20 p-4 rounded-full">
+                      <Sparkles className="w-5 h-5  stroke-theme/70" />
+
+                      {/* <div className="relative w-36 h-36  bg-white/60 rounded-full overflow-hidden ">
+                        <Image src="/undraw-done.svg" alt="qa" fill />
+                      </div> */}
+                    </div>
                     <span className="flex items-center space-x-2">
-                      <Sparkles className="w-5 h-5 stroke-theme" />
-                      <TypographyH3 className="text-theme">Sparkle</TypographyH3>
+                      <TypographyH3 className="">Sparkle</TypographyH3>
                     </span>
-                    <p className="ml-8 ">
+                    <p className=" ">
                       Sparkle delivers thorough, eco-friendly cleaning solutions for homes and businesses. Trust us for a pristine space,
                       every time.
                     </p>
                   </div>
                 </Box>
 
-                <Box className="w-full flex flex-col p-8 items-center justify-center  space-y-8  ">
+                <Box className="w-full flex flex-col p-8 items-center justify-center  space-y-8 ">
                   <div className="flex flex-col  justify-center space-y-2">
-                    <div className="w-full flex justify-center">
-                      <div className="relative w-36 h-36  bg-white/60  rounded-full overflow-hidden ">
-                        <Image src="/undraw-window.svg" alt="qa" fill />
-                      </div>
+
+                    <div className="w-fit flex mb-8 border border-solid border-theme/20 p-4 rounded-full">
+                      <HardHat className="w-5 h-5  stroke-theme/70" />
+
+                      {/* <div className="relative w-36 h-36  bg-white/60 rounded-full overflow-hidden ">
+                        <Image src="/undraw-done.svg" alt="qa" fill />
+                      </div> */}
                     </div>
                     <span className="flex items-center space-x-2">
-                      <HardHat className="w-5 h-5  stroke-theme" />
-                      <TypographyH3 className="text-theme">Gleam</TypographyH3>
+                      <TypographyH3 className="">Gleam</TypographyH3>
                     </span>
-                    <p className="ml-8 ">
+                    <p className=" ">
+                      Our gleam service ensures businesses shine with a detailed, eco-friendly clean, leaving every corner sparkling and pristine.
+
+                    </p>
+                  </div>
+                </Box>
+
+
+
+                <Box className="w-full flex flex-col p-8 items-center justify-center  space-y-8 ">
+                  <div className="flex flex-col  justify-center space-y-2">
+
+                    <div className="w-fit flex mb-8 border border-solid border-theme/20 p-4 rounded-full">
+                      <HardHat className="w-5 h-5  stroke-theme/70" />
+
+                      {/* <div className="relative w-36 h-36  bg-white/60 rounded-full overflow-hidden ">
+                        <Image src="/undraw-done.svg" alt="qa" fill />
+                      </div> */}
+                    </div>
+                    <span className="flex items-center space-x-2">
+                      <TypographyH3 className="">Gleam</TypographyH3>
+                    </span>
+                    <p className=" ">
+                      Our gleam service ensures businesses shine with a detailed, eco-friendly clean, leaving every corner sparkling and pristine.
+
+                    </p>
+                  </div>
+                </Box>
+
+                <Box className="w-full flex flex-col p-8 items-center justify-center  space-y-8 ">
+                  <div className="flex flex-col  justify-center space-y-2">
+
+                    <div className="w-fit flex mb-8 border border-solid border-theme/20 p-4 rounded-full">
+                      <HardHat className="w-5 h-5  stroke-theme/70" />
+
+                      {/* <div className="relative w-36 h-36  bg-white/60 rounded-full overflow-hidden ">
+                        <Image src="/undraw-done.svg" alt="qa" fill />
+                      </div> */}
+                    </div>
+                    <span className="flex items-center space-x-2">
+                      <TypographyH3 className="">Gleam</TypographyH3>
+                    </span>
+                    <p className=" ">
                       Our gleam service ensures businesses shine with a detailed, eco-friendly clean, leaving every corner sparkling and pristine.
 
                     </p>
@@ -475,9 +532,15 @@ export default function Home() {
                 </Box>
               </div>
 
+            </div>
 
-            </AnimateComponent>
-          </div>
+
+          </AnimateComponent>
+        </div>
+      </div>
+      <div className="  pl-8 pr-8 pt-32 pb-32 flex flex-col space-y-8 z-10 w-full max-w-screen-xl overflow-visible">
+        <div className="w-full flex flex-col space-y-32 justify-center overflow-visible">
+
           <div className="w-full flex space-x-16 ">
             <div className="w-1/2">
               <AnimateComponent

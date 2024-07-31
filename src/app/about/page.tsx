@@ -146,7 +146,7 @@ export default function About() {
                     className=""
                   />
                 </div>
-                <p className="text-xs pt-2 text-muted-foreground">Elite cleaning co-founders Karen Gibbons, Ian Gibbons, Director Carol Faith and the team. </p>
+                <p className="text-xs pt-2 text-muted-foreground">Elite cleaning co-founders Karen Smith, Ian Smith, Director Carol Faith and the team. </p>
               </div>
             </div>
           </div>
@@ -167,13 +167,13 @@ export default function About() {
             <div className="w-full grid grid-cols-4 gap-5 ">
               <AvatarUser
                 firstname="Ian"
-                surname="Gibbons"
+                surname="Smith"
                 role="Director"
                 url="https://thispersondoesnotexist.com"
               />
               <AvatarUser
                 firstname="Karen"
-                surname="Gibbons"
+                surname="Smith"
                 role="Director"
 
                 url="https://thispersondoesnotexist.com"
@@ -186,26 +186,26 @@ export default function About() {
               />
               <AvatarUser
                 firstname="Zoe"
-                surname="Gibbons"
+                surname="Smith"
                 role="Sales Manager"
                 url="https://thispersondoesnotexist.com"
               />
 
               <AvatarUser
                 firstname="Jim"
-                surname="Gibbons"
+                surname="Smith"
                 role="Supervisor"
                 url="https://thispersondoesnotexist.com"
               />
               <AvatarUser
                 firstname="Josh"
-                surname="Gibbons"
+                surname="Smith"
                 role="Supervisor"
                 url="https://thispersondoesnotexist.com"
               />
               <AvatarUser
                 firstname="Sam"
-                surname="Gibbons"
+                surname="Smith"
                 role="Supervisor"
                 url="https://thispersondoesnotexist.com"
               />
@@ -217,19 +217,19 @@ export default function About() {
               />
               <AvatarUser
                 firstname="Jim"
-                surname="Gibbons"
+                surname="Smith"
                 role="Supervisor"
                 url="https://thispersondoesnotexist.com"
               />
               <AvatarUser
                 firstname="Josh"
-                surname="Gibbons"
+                surname="Smith"
                 role="Supervisor"
                 url="https://thispersondoesnotexist.com"
               />
               <AvatarUser
                 firstname="Sam"
-                surname="Gibbons"
+                surname="Smith"
                 role="Supervisor"
                 url="https://thispersondoesnotexist.com"
               />
