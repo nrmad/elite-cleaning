@@ -16,6 +16,7 @@ import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import { CalendarCheck, HardHat, IterationCcw, IterationCw, PackageCheck, PaintBucket, Sparkles, UsersRound } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import ReviewWidget from "@/components/ReviewWidget";
 
 const montserrat = Montserrat({ weight: "400", subsets: ["latin"] });
 
@@ -321,50 +322,41 @@ export default function Home() {
           <div className="w-full relative p-8 flex space-x-4  bg-[url('/construction4.jpg')] bg-bottom bg-cover ">
             <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-60" />
 
-            <Box className="w-1/2 h-64 text-primary-foreground p-8 space-y-4">
-              <TypographyP>
-                I have managed Elite with the welfare management and I would have no
-                problem recommending them. They have also been the teams no 1
-                builders clean contractor over the years for Sisk on past projects
-                (December 2023)
-              </TypographyP>
-              <div className="flex flex-col space-y-1">
-                <TypographyP className="font-semibold">
-                  Kavishnan Jeyarajah
-                </TypographyP>
-                <TypographyP className="text-sm">
-                  Site Manager, John Sisk - Welfare Cleaning (Wembley)
-                </TypographyP>
-              </div>
-            </Box>
-            <Box className="w-1/2 h-64 text-primary-foreground p-8 space-y-4">
-              <TypographyP>
-                Elite are our 'go to' builder clean contractor. They have helped us
-                deliver over 2000 apartments here in recent years as well as
-                managing the site welfare cleaning. Highly recommended (December
-                2023)
-              </TypographyP>
-              <div className="flex flex-col space-y-1">
-                <TypographyP className="font-semibold">Daniel Makell</TypographyP>
-                <TypographyP className="text-sm">
-                  Project Director, John Sisk - Welfare Cleaning (Wembley)
-                </TypographyP>
-              </div>
-            </Box>
-            <Box className="w-1/2 h-64 text-primary-foreground p-8 space-y-4">
-              <TypographyP>
-                Elite are our 'go to' builder clean contractor. They have helped us
-                deliver over 2000 apartments here in recent years as well as
-                managing the site welfare cleaning. Highly recommended (December
-                2023)
-              </TypographyP>
-              <div className="flex flex-col space-y-1">
-                <TypographyP className="font-semibold">Daniel Makell</TypographyP>
-                <TypographyP className="text-sm">
-                  Project Director, John Sisk - Welfare Cleaning (Wembley)
-                </TypographyP>
-              </div>
-            </Box>
+            <ReviewWidget
+              className="w-1/3 h-64 text-primary-foreground justify-between  "
+              name={"Kavishnan Jeyarajah"}
+              role={"Site Manager"}
+              company={"John Sisk"}
+              variant={"Welfare Cleaning (Wembley)"}>
+              I have managed Elite with the welfare management and I would have no
+              problem recommending them. They have also been the teams no 1
+              builders clean contractor over the years for Sisk on past projects
+              (December 2023)
+            </ReviewWidget>
+
+            <ReviewWidget
+              className="w-1/3 h-64 text-primary-foreground justify-between  "
+              name={"Daniel Makell"}
+              role={"Project Director"}
+              company={"John Sisk"}
+              variant={"Welfare Cleaning (Wembley)"}>
+              Elite are our 'go to' builder clean contractor. They have helped us
+              deliver over 2000 apartments here in recent years as well as
+              managing the site welfare cleaning. Highly recommended (December
+              2023)
+            </ReviewWidget>
+
+            <ReviewWidget
+              className="w-1/3 h-64 text-primary-foreground justify-between  "
+              name={"Daniel Makell"}
+              role={"Project Director"}
+              company={"John Sisk"}
+              variant={"Welfare Cleaning (Wembley)"}>
+              Elite are our 'go to' builder clean contractor. They have helped us
+              deliver over 2000 apartments here in recent years as well as
+              managing the site welfare cleaning. Highly recommended (December
+              2023)
+            </ReviewWidget>
 
           </div>
         </AnimateComponent>
@@ -422,9 +414,7 @@ export default function Home() {
                         <TypographyH3 className="">Base</TypographyH3>
                       </span>
                       <p className=" ">
-                        Our base clean provides a thorough, eco-friendly initial cleaning for businesses, ensuring a pristine start every time.
-
-                      </p>
+                        Base builders cleans handle glazing, balconies, and removes construction residue, ensuring a spotless, ready-to-use space.                      </p>
                     </div>
                   </div>
                 </Box>
@@ -443,8 +433,7 @@ export default function Home() {
                       <TypographyH3 className="">Reclean</TypographyH3>
                     </span>
                     <p className=" ">
-                      Recleans offers meticulous, eco-friendly cleaning services for businesses. Experience spotless results with every visit.
-
+                      A 'Re-Clean' follows the initial clean, removing deposits from remedial work and optionally buffing internal glazing.
                     </p>
                   </div>
                 </Box>
@@ -463,8 +452,7 @@ export default function Home() {
                       <TypographyH3 className="">Sparkle</TypographyH3>
                     </span>
                     <p className=" ">
-                      Sparkle delivers thorough, eco-friendly cleaning solutions for homes and businesses. Trust us for a pristine space,
-                      every time.
+                      A 'Sparkle Clean' removes dust and cleans floors after a re-clean, with optional internal glazing buffing.
                     </p>
                   </div>
                 </Box>

@@ -7,6 +7,9 @@ import { TypographyH4 } from "@/components/ui/typographyH4";
 import { TypographyP } from "@/components/ui/typographyP";
 import Image from "next/image";
 import WorkWidget from "./WorkWidget";
+import { Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
+import { Separator } from "@/components/ui/separator";
 
 
 export default function Sectors() {
@@ -38,24 +41,38 @@ export default function Sectors() {
                         }}
                     >
 
-                        <div className="flex flex-col">
-                            <TypographyP>
-                                We have grown into one of the most successful builders cleaning companies in the UK due to our unwavering commitment
-                                to client satisfaction and our focus on delivering exceptional service. This dedication has earned us a strong
-                                reputation for quality and reliability.
-                            </TypographyP>
-                            <TypographyP>
-                                Our cleaning teams undertake work in six key sectors, including health care, accommodation, commercial, education,
-                                leisure, and retail. In each of these areas, we consistently deliver exceptional results, ensuring that every space
-                                is impeccably clean and meets the highest standards of hygiene and presentation.
-                            </TypographyP>
-                            <TypographyP>
-                                We offer our clients in both the private and public sectors a national service with a personal touch. By focusing
-                                on the specific needs of each project, we ensure quality and reliability in every job we undertake. Whether it's a
-                                hospital, a hotel, an office building, a school, a leisure facility, or a retail space, our expert teams are
-                                dedicated to providing the best cleaning services available.
-                            </TypographyP>
+                        <div className="flex flex-col w-full space-y-4" >
+                            <Breadcrumb>
+                                <BreadcrumbList>
+                                    <BreadcrumbItem>
+                                        <BreadcrumbPage >Sectors</BreadcrumbPage>
+                                    </BreadcrumbItem>
+                                </BreadcrumbList>
+                            </Breadcrumb>
+
+
+                            <Separator />
+
+                            <div className="flex flex-col">
+                                <TypographyP>
+                                    We have grown into one of the most successful builders cleaning companies in the UK due to our unwavering commitment
+                                    to client satisfaction and our focus on delivering exceptional service. This dedication has earned us a strong
+                                    reputation for quality and reliability.
+                                </TypographyP>
+                                <TypographyP>
+                                    Our cleaning teams undertake work in six key sectors, including health care, accommodation, commercial, education,
+                                    leisure, and retail. In each of these areas, we consistently deliver exceptional results, ensuring that every space
+                                    is impeccably clean and meets the highest standards of hygiene and presentation.
+                                </TypographyP>
+                                <TypographyP>
+                                    We offer our clients in both the private and public sectors a national service with a personal touch. By focusing
+                                    on the specific needs of each project, we ensure quality and reliability in every job we undertake. Whether it's a
+                                    hospital, a hotel, an office building, a school, a leisure facility, or a retail space, our expert teams are
+                                    dedicated to providing the best cleaning services available.
+                                </TypographyP>
+                            </div>
                         </div>
+
 
 
                         <div className="w-full grid grid-cols-3 grid-rows-2 gap-8 ">
