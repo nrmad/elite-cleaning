@@ -3,7 +3,7 @@
 import AnimateComponent from "@/components/AnimateComponent";
 import Box from "@/components/Box";
 import { Footer } from "@/components/Footer";
-import { TopBar } from "@/components/Topbar";
+import { NavigationBar } from "@/components/NavigationBar";
 import { TypographyH2 } from "@/components/ui/typographyH2";
 import { TypographyH4 } from "@/components/ui/typographyH4";
 import { TypographyP } from "@/components/ui/typographyP";
@@ -32,7 +32,7 @@ export default function Project() {
 
     return (
         <main className="flex min-h-screen flex-col items-center">
-            <TopBar />
+            <NavigationBar />
             <div className="w-full  from-theme to-muted from-5% to-95% bg-gradient-to-r flex flex-col items-center pt-20 pb-20">
                 <AnimateComponent
                     // transition={{ type: "spring", bounce: 0, duration: 0.6 }}

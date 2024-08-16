@@ -3,7 +3,7 @@
 import AnimateComponent from "@/components/AnimateComponent";
 import { AnimateNumber } from "@/components/AnimateNumber";
 import { Footer } from "@/components/Footer";
-import { TopBar } from "@/components/Topbar";
+import { NavigationBar } from "@/components/NavigationBar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -23,14 +23,14 @@ import { AvatarUser } from "@/components/AvatarUser";
 import { ImageWidget } from "@/components/ImageWidget";
 
 export default function Clients() {
-  // just noticed the topbar should shrink on sticky motion
+  // just noticed the NavigationBar should shrink on sticky motion
 
   // TODO: RESIZE AND ACTIVATE LOGO LINKS SWAPPING OUT RYDONS GROSS LOGO
   // TODO: LOGOS SAME HEIGHT LOOKS GOOD
 
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <TopBar />
+      <NavigationBar />
 
       <div className=" pt-20 pl-8 pr-8 pb-32 flex flex-col space-y-8 z-10 w-full max-w-screen-xl">
         <div className="w-full flex flex-col space-y-16 justify-center ">
@@ -93,78 +93,118 @@ export default function Clients() {
             }}
           >
             <div className="w-full grid grid-cols-5 gap-8">
-              <ImageWidget
-                name="mclaren"
-                url="/mclaren-logo-testy.svg"
-              // width={80}
-              />
-              <ImageWidget
-                name="bowmer-kirkland"
-                url="/bowmer-kirkland-logo.svg"
-              />
-              <ImageWidget
-                name="balfour-beatty"
-                url="/balfour-beatty-logo.svg"
-              />
-              <ImageWidget
-                name="skanska"
-                url="/skanska-logo.svg"
-                className="object-contain"
-              />
-              <ImageWidget
-                name="kier"
-                url="/kier-logo.svg"
-                className="object-contain"
-              />
-              <ImageWidget
-                name="sisk"
-                url="/sisk-logo.svg"
-                className="object-contain"
-              />
-              <ImageWidget
-                name="bam"
-                url="/bam-logo.svg"
-                className="object-contain"
-              />
-              <ImageWidget
-                name="costain"
-                url="/costain-logo.svg"
-                className="object-contain"
-              />
-              <ImageWidget
-                name="redrow"
-                url="/redrow-logo.svg"
-                className="object-contain"
-              />
-              <ImageWidget
-                name="galliford"
-                url="/galliford-logo.svg"
-                className="object-contain"
-              />
-              <ImageWidget
-                name="rydon"
-                url="/rydon-logo.svg"
-                className="object-contain"
-              />
-              <ImageWidget
-                name="lendlease"
-                url="/lendlease-logo.svg"
-                className="object-contain"
-              />
-              <ImageWidget
-                name="lindenhomes"
-                url="/lindenhomes-logo.svg"
-                className="object-contain"
-              />
-              <ImageWidget
-                name="laing-o-rourke"
-                url="/laing-o-rourke-logo.svg"
-              />
-              <ImageWidget
-                name="vinci"
-                url="/vinci-logo.svg"
-                className="object-contain"
-              />
+
+              <a href="https://mclarengroup.com/" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="mclaren"
+                  url="/mclaren-logo-testy.svg"
+                  className=""
+
+                // width={80}
+                />
+              </a>
+              <a href="https://www.bandk.co.uk/" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="bowmer-kirkland"
+                  url="/bowmer-kirkland-logo-cropped.svg"
+                  className=""
+                />
+              </a>
+              <a href="https://www.balfourbeatty.com/" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="balfour-beatty"
+                  url="/balfour-beatty-logo.svg"
+                  className=""
+                />
+              </a>
+              <a href="https://www.skanska.co.uk/" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="skanska"
+                  url="/skanska-logo.svg"
+                  className="object-contain "
+                />
+              </a>
+
+              <a href="https://www.kier.co.uk/" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="kier"
+                  url="/kier-logo.svg"
+                  className="object-contain 0"
+                />
+              </a>
+              <a href="https://www.johnsiskandson.com/uk" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="sisk"
+                  url="/sisk-logo.svg"
+                  className="object-contain "
+                />
+              </a>
+              <a href="https://www.bam.co.uk/" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="bam"
+                  url="/bam-logo.svg"
+                  className="object-contain"
+                />
+              </a>
+              <a href="https://www.costain.com/" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="costain"
+                  url="/costain-logo.svg"
+                  className="object-contain "
+                />
+              </a>
+              <a href="https://www.redrow.co.uk/" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="redrow"
+                  url="/redrow-logo.svg"
+                  className="object-contain "
+                />
+              </a>
+              <a href="https://www.gallifordtry.co.uk/" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="galliford"
+                  url="/galliford-logo.svg"
+                  className="object-contain"
+                />
+              </a>
+              <a href="https://www.rydon.co.uk/" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="rydon"
+                  url="/rydon-logo.svg"
+                  className="object-contain "
+                />
+              </a>
+              <a href="https://www.lendlease.com/uk/" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="lendlease"
+                  url="/lendlease-logo.svg"
+                  className="object-contain "
+                />
+              </a>
+              <a href="https://www.lindenhomes.co.uk/" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="lindenhomes"
+                  url="/lindenhomes-logo.svg"
+                  className="object-contain "
+
+                />
+              </a>
+              <a href="https://www.laingorourke.com/" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="laing-o-rourke"
+                  url="/laing-o-rourke-logo.svg"
+                  className="object-contain "
+                />
+              </a>
+
+              <a href="https://uk.vinci-construction.com/" target="_blank" rel="noopener noreferrer">
+                <ImageWidget
+                  name="vinci"
+                  url="/vinci-logo.svg"
+                  className="object-contain "
+                />
+              </a>
+
             </div>
           </AnimateComponent>
         </div>

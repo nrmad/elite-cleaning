@@ -3,7 +3,7 @@
 import AnimateComponent from "@/components/AnimateComponent";
 import { AnimateNumber } from "@/components/AnimateNumber";
 import { Footer } from "@/components/Footer";
-import { TopBar } from "@/components/Topbar";
+import { NavigationBar } from "@/components/NavigationBar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -21,11 +21,11 @@ import Image from "next/image";
 
 
 export default function Contact() {
-  // just noticed the topbar should shrink on sticky motion
+  // just noticed the NavigationBar should shrink on sticky motion
 
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <TopBar />
+      <NavigationBar />
 
       <div className=" pt-20 pl-8 pr-8 pb-20 flex flex-col space-y-8 z-10 w-full max-w-screen-xl">
         <div className="w-full flex flex-col space-y-8 justify-center ">

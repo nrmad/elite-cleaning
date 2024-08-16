@@ -1,7 +1,7 @@
 import AnimateComponent from "@/components/AnimateComponent";
 import Box from "@/components/Box";
 import { Footer } from "@/components/Footer";
-import { TopBar } from "@/components/Topbar";
+import { NavigationBar } from "@/components/NavigationBar";
 import { TypographyH2 } from "@/components/ui/typographyH2";
 import { TypographyH4 } from "@/components/ui/typographyH4";
 import { TypographyP } from "@/components/ui/typographyP";
@@ -43,7 +43,7 @@ export default function Commercial() {
 
     return (
         <main className="flex min-h-screen flex-col items-center">
-            <TopBar />
+            <NavigationBar />
             <div className="w-full  from-theme to-muted from-5% to-95% bg-gradient-to-r flex flex-col items-center pt-20 pb-20">
                 <AnimateComponent
                     // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
@@ -97,13 +97,13 @@ export default function Commercial() {
                                     <li>Value of projects in the last five years £661 million</li>
                                 </ul>
                                 <TypographyP className="font-semibold mb-6">
-                                    "I would like to thank you and your team for all the hard work you have put in over the past few weeks, the project is
+                                    &quot;I would like to thank you and your team for all the hard work you have put in over the past few weeks, the project is
                                     very sharp looking and our client (Department of Education) has commented on how well the building looked.
                                     I will be fully recommending you across the B&K business and if you require a recommendation for any customers please
-                                    use me as a reference. (August 2022)"
+                                    use me as a reference. (August 2022)&quot;
                                 </TypographyP>
                                 <p className="text-sm">
-                                    Denis O'Toole
+                                    Denis O&apos;Toole
                                 </p>
                                 <p className="text-sm">
                                     Project Manager, Bowmer & Kirkland - The Hub

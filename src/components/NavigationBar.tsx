@@ -1,6 +1,6 @@
-"use client";
+"use client"
 import { Check, CircleHelp, DropletIcon, Mail, MenuIcon, Phone, X } from "lucide-react";
-import { ReactNode, useState } from "react";
+import { ReactNode, useEffect, useLayoutEffect, useRef, useState } from "react";
 
 import {
   NavigationMenu,
@@ -11,6 +11,13 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import {
+  NavigationMenuSub,
+  NavigationMenuContent as Falafel,
+  NavigationMenuViewport,
+  NavigationMenuList as FalafelList
+
+} from "@radix-ui/react-navigation-menu";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { ApertureIcon } from "lucide-react";
@@ -21,6 +28,8 @@ import { TypographyH4 } from "./ui/typographyH4";
 import Image from "next/image";
 import { TypographyP } from "./ui/typographyP";
 import { useInView } from "react-intersection-observer";
+import { usePathname } from 'next/navigation';
+
 // import {
 //   Command,
 //   CommandDialog,
@@ -45,45 +54,98 @@ import { useInView } from "react-intersection-observer";
 
 //border-2 border-slate-200
 
-export function TopBar() {
+export function NavigationBar() {
   // md:max-w-screen-xl
 
   // TODO: BUG where if you scroll right on view change point it loops
+  // TODO: Make NavigationBar glassmorphic
 
-  const { ref, inView, entry } = useInView({
-    initialInView: true,
-    /* Optional options */
-    threshold: 0,
-  });
+  // TODO: Temp fix the size of NavigationBar fixed but maybe come back
 
-  console.log("dfskf")
-  console.log(inView)
+
+  // const firstView = useRef<boolean>(true)
+  // const test = useRef<boolean>(true)
+  // const [visible, setVisible] = useState<boolean>(true)
+
+  // const { ref, inView, entry } = useInView({
+  //   initialInView: true,
+  //   threshold: 0.4,
+  // });
+
+
+  // console.log('a ' + inView)
+  // console.log('b ' + visible)
+
+  // useLayoutEffect(() => {
+
+  //   console.log('running ' + window.scrollY)
+
+  //   if (firstView.current) {
+  //     // visible.current = window.scrollY <= 34
+  //     test.current = window.scrollY <= 34
+  //     setVisible(window.scrollY <= 34)
+  //     console.log("what we set " + (test.current))
+  //     firstView.current = false
+  //   }
+
+
+
+  //   console.log("here " + firstView.current)
+  // }, []);
+
+  // useLayoutEffect(() => {
+
+  //  firstView.current = inView
+
+
+  //   console.log("here " + firstView.current)
+  // }, []);
+
+
+  const pathname = usePathname();
+
+  // const [barHeight, setBarHeight] = useState(110);
+
+  // useEffect(() => {
+  //   // Update only if the `inView` state has changed
+  //   if (inView !== inViewRef.current) {
+  //     setBarHeight(inView ? 110 : 90);
+  //     inViewRef.current = inView; // Update the ref
+  //   }
+  // }, [inView]);
+
+
 
   // 90px
   //h-[${inView ? 110 : 90}px]
 
+  //ref={ref}
+
   return (
     <>
-      <div ref={ref} className="flex items-center h-12 w-full bg-white border-b border-solid border-border">
+      <div className="flex items-center h-12 w-full border-b border-solid border-border isolate bg-white/60  ring-1 ring-black/5 backdrop-blur-lg ">
         <div className="w-full flex justify-center pl-8 pr-8">
           <div className="w-full  md:max-w-screen-xl">
             <div className="flex items-center space-x-2">
               <div className="flex space-x-2 items-center">
-                <Mail className="w-4 h-4" />
-                <p className="text-xs ">Info@cleanelite.co.uk</p>
+                <Mail className="w-4 h-4 stroke-foreground/60 " />
+                <p className="text-xs text-foreground/60 ">Info@cleanelite.co.uk</p>
               </div>
               <Separator orientation="vertical" className="h-6" />
               <div className="flex space-x-2 items-center">
-                <Phone className="w-4 h-4" />
-                <p className="text-xs">01932 847798</p>
+                <Phone className="w-4 h-4 stroke-foreground/60 " />
+                <p className="text-xs text-foreground/60 ">01932 847798</p>
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="sticky z-50 top-0 w-full" >
-        <div className="bg-white flex flex-col items-center justify-center w-full space-y-2 z-50 relative ">
-          <div style={{ height: (inView ? 110 : 90) }} className={`flex items-center justify-center w-full pl-8 pr-8 `}>
+        {/* <h1 className="fixed w-60 h-60 border border-solid border-red-500 z-[500]">Memes {visible.toString()}
+          Memes2 {test.current.toString()}
+          </h1> */}
+        <div className="isolate bg-white/60 shadow-lg ring-1 ring-black/5 backdrop-blur-lg flex flex-col items-center justify-center w-full space-y-2 z-50 relative ">
+          <div style={{ height: 90 }} className={`flex items-center justify-center w-full pl-8 pr-8 `}>
             <div className="flex items-center justify-between md:max-w-screen-xl w-full ">
               {/* <div className="w-44 flex justify-start">
                 <Button size="icon" variant="ghost">
@@ -105,7 +167,7 @@ export function TopBar() {
                   <NavigationMenuItem>
                     <Link href="/" legacyBehavior passHref className="w-full">
                       <NavigationMenuLink
-                        className={cn(navigationMenuTriggerStyle(), "w-full ")}
+                        className={cn(navigationMenuTriggerStyle(), "w-full ", pathname === '/' ? "text-black" : "")}
                       >
                         {/* <p className={` text-black hover:text-opacity-50`}>About</p> */}
                         Home
@@ -121,7 +183,7 @@ export function TopBar() {
                       className="w-full"
                     >
                       <NavigationMenuLink
-                        className={cn(navigationMenuTriggerStyle(), "w-full ")}
+                        className={cn(navigationMenuTriggerStyle(), "w-full ", pathname === '/clients' ? "text-black" : "")}
                       >
                         {/* <p className={` text-black hover:text-opacity-50`}>About</p> */}
                         Clients
@@ -137,7 +199,7 @@ export function TopBar() {
                       className="w-full"
                     >
                       <NavigationMenuLink
-                        className={cn(navigationMenuTriggerStyle(), "w-full ")}
+                        className={cn(navigationMenuTriggerStyle(), "w-full ", pathname === '/health-safety' ? "text-black" : "")}
                       >
                         {/* <p className={` text-black hover:text-opacity-50`}>About</p> */}
                         Safety
@@ -155,38 +217,63 @@ export function TopBar() {
                         href="/sectors"
                         legacyBehavior
                         passHref
-                        className="w-full"
+                        className={"w-full"}
                       >
-                        Sectors
+                        <NavigationMenuLink
+                          className={cn(pathname === '/sectors' ? "text-black" : "")}
+                        >
+                          {/* <p className={` text-black hover:text-opacity-50`}>About</p> */}
+                          Sectors
+                        </NavigationMenuLink>
                       </Link>
 
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="">
-                      <div className="w-[600px] flex ">
-                        <ul className="w-full grid gap-1 p-4 md:grid-rows-2 md:grid-cols-3">
-                          <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start")}
-                          >Commercial</NavigationMenuLink>
-                          <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start")}
-                          >Education</NavigationMenuLink>
-                          <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start")}
-                          >
-                            Leisure
-                          </NavigationMenuLink>
+                    <NavigationMenuContent className="bg-red-500/99 opacity-99">
+                      {/* <NavigationMenu.Sub defaultValue="sub1"> */}
+
+                      <div className="w-[600px] flex opacity-100">
+                        <ul className="w-full grid gap-1 p-4 md:grid-rows-2 md:grid-cols-3 opacity-100">
+                          <Link href="/sectors/commercial" passHref>
+                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/commercial' ? "text-black" : "")}
+                            >Commercial
+                            </NavigationMenuLink>
+                          </Link>
+                          <Link href="/sectors/education" passHref>
+                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/education' ? "text-black" : "")}
+                            >Education</NavigationMenuLink>
+                          </Link>
+
+                          <Link href="/sectors/leisure" passHref>
+                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/leisure' ? "text-black" : "")}
+                            >
+                              Leisure
+                            </NavigationMenuLink>
+                          </Link>
+
                           {/* <NavigationMenuLink>
                             Hotel & Leisure
                           </NavigationMenuLink> */}
-                          <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start")}
-                          >Health</NavigationMenuLink>
-                          <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start")}
-                          >
-                            Accommodation
-                          </NavigationMenuLink>
+                          <Link href="/sectors/health" passHref>
+                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/health' ? "text-black" : "")}
+                            >Health</NavigationMenuLink>
+                          </Link>
+
+                          <Link href="/sectors/accommodation" passHref>
+                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/accommodation' ? "text-black" : "")}
+                            >
+                              Accommodation
+                            </NavigationMenuLink>
+                          </Link>
+
                           {/* <NavigationMenuLink>
                             Student accommodation
                           </NavigationMenuLink> */}
                           {/* <NavigationMenuLink>Residential</NavigationMenuLink> */}
-                          <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start")}
-                          >Retail</NavigationMenuLink>
+                          <Link href="/sectors/retail" passHref>
+                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/retail' ? "text-black" : "")}
+                            >Retail</NavigationMenuLink>
+                          </Link>
+
                         </ul>
                       </div>
                     </NavigationMenuContent>
@@ -196,10 +283,10 @@ export function TopBar() {
                       href="/reviews"
                       legacyBehavior
                       passHref
-                      className="w-full"
+                      className={cn("w-full")}
                     >
                       <NavigationMenuLink
-                        className={cn(navigationMenuTriggerStyle(), "w-full ")}
+                        className={cn(navigationMenuTriggerStyle(), "w-full ", pathname === '/reviews' ? "text-black" : "")}
                       >
                         {/* <p className={` text-black hover:text-opacity-50`}>About</p> */}
                         Reviews
@@ -215,7 +302,7 @@ export function TopBar() {
                       className="w-full"
                     >
                       <NavigationMenuLink
-                        className={cn(navigationMenuTriggerStyle(), "w-full ")}
+                        className={cn(navigationMenuTriggerStyle(), "w-full ", pathname === '/about' ? "text-black" : "")}
                       >
                         {/* <p className={` text-black hover:text-opacity-50`}>About</p> */}
                         About
@@ -231,7 +318,7 @@ export function TopBar() {
                       className="w-full"
                     >
                       <NavigationMenuLink
-                        className={cn(navigationMenuTriggerStyle(), "w-full ")}
+                        className={cn(navigationMenuTriggerStyle(), "w-full ", pathname === '/contact' ? "text-black" : "")}
                       >
                         {/* <p className={` text-black hover:text-opacity-50`}>About</p> */}
                         Contact

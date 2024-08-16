@@ -3,7 +3,7 @@
 import AnimateComponent from "@/components/AnimateComponent";
 import { AnimateNumber } from "@/components/AnimateNumber";
 import { Footer } from "@/components/Footer";
-import { TopBar } from "@/components/Topbar";
+import { NavigationBar } from "@/components/NavigationBar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -24,11 +24,11 @@ import ReviewWidget from "@/components/ReviewWidget";
 
 
 export default function Reviews() {
-    // just noticed the topbar should shrink on sticky motion
+    // just noticed the NavigationBar should shrink on sticky motion
 
     return (
         <main className="flex min-h-screen flex-col items-center">
-            <TopBar />
+            <NavigationBar />
 
             <div className=" pt-20 pl-8 pr-8  flex flex-col space-y-8 z-10 w-full max-w-screen-xl flex-1">
                 <div className="w-full flex flex-col space-y-8 justify-center ">
@@ -85,7 +85,7 @@ export default function Reviews() {
                             role={"Project Director"}
                             company={"John Sisk"}
                             variant={"Welfare Cleaning (Wembley)"}>
-                            Elite are our 'go to' builder clean contractor. They have helped us deliver over 2000 apartments here in recent
+                            Elite are our &apos;go to&apos; builder clean contractor. They have helped us deliver over 2000 apartments here in recent
                             years as well as managing the site welfare cleaning. Highly recommended (December 2023)
                         </ReviewWidget>
                         <ReviewWidget
@@ -95,8 +95,8 @@ export default function Reviews() {
                             company={"Kier"}
                             variant={"Exclusive housing development"}>
                             I would like to take this opportunity to thank Elite and in particular Viorica and her team for all the help that
-                            they gave us to get the apartments ready for client inspections. The contract has been challenging and the 'no
-                            problem' attitude has been very refreshing and appreciated. We would be happy to employ Elite as a cleaning
+                            they gave us to get the apartments ready for client inspections. The contract has been challenging and the &apos;no
+                            problem&apos; attitude has been very refreshing and appreciated. We would be happy to employ Elite as a cleaning
                             contractor on any future projects (October 2023)
                         </ReviewWidget>
                         <ReviewWidget
@@ -113,7 +113,7 @@ export default function Reviews() {
                             role={"Site Manager"}
                             company={"Balfour Beatty"}
                             variant={"Offices"}>
-                            Olesea, Elite Supervisor's work ethics are exceptional. I highly recomend Olesea and her team for any future
+                            Olesea, Elite Supervisor&apos;s work ethics are exceptional. I highly recomend Olesea and her team for any future
                             projects (July 2023)
                         </ReviewWidget>
                         <ReviewWidget
@@ -123,7 +123,7 @@ export default function Reviews() {
                             company={"McLaren"}
                             variant={"Hotel"}>
                             Please pass on my thanks to your team involved with the project, in particular with the crew we had on site -
-                            they were all very efficient and easy to work with, which makes things a lot easier from my team's side -
+                            they were all very efficient and easy to work with, which makes things a lot easier from my team&apos;s side -
                             my Senior Site Manager was paricularly complimentary of Elite. Thanks again (July 2023)
                         </ReviewWidget>
                     </div>
@@ -135,8 +135,8 @@ export default function Reviews() {
                             company={"Kier"}
                             variant={"Exclusive housing development"}>
                             I would like to take this opportunity to thank Elite and in particular Viorica and her team for all the help that
-                            they gave us to get the apartments ready for client inspections. The contract has been challenging and the 'no
-                            problem' attitude has been very refreshing and appreciated. We would be happy to employ Elite as a cleaning
+                            they gave us to get the apartments ready for client inspections. The contract has been challenging and the &apos;no
+                            problem&apos; attitude has been very refreshing and appreciated. We would be happy to employ Elite as a cleaning
                             contractor on any future projects (October 2023)
                         </ReviewWidget>
 
@@ -155,7 +155,7 @@ export default function Reviews() {
                             role={"Site Manager"}
                             company={"Balfour Beatty"}
                             variant={"Offices"}>
-                            Olesea, Elite Supervisor's work ethics are exceptional. I highly recommend Olesea and her team for any future
+                            Olesea, Elite Supervisor&apos;s work ethics are exceptional. I highly recommend Olesea and her team for any future
                             projects (July 2023)
                         </ReviewWidget>
 
@@ -165,7 +165,7 @@ export default function Reviews() {
                             role={"Project Director"}
                             company={"John Sisk"}
                             variant={"Welfare Cleaning (Wembley)"}>
-                            Elite are our 'go to' builder clean contractor. They have helped us deliver over 2000 apartments here in recent
+                            Elite are our &apos;go to&apos; builder clean contractor. They have helped us deliver over 2000 apartments here in recent
                             years as well as managing the site welfare cleaning. Highly recommended (December 2023)
                         </ReviewWidget>
 
@@ -176,7 +176,7 @@ export default function Reviews() {
                             company={"McLaren"}
                             variant={"Hotel"}>
                             Please pass on my thanks to your team involved with the project, in particular with the crew we had on site -
-                            they were all very efficient and easy to work with, which makes things a lot easier from my team's side -
+                            they were all very efficient and easy to work with, which makes things a lot easier from my team&apos;s side -
                             my Senior Site Manager was particularly complimentary of Elite. Thanks again (July 2023)
                         </ReviewWidget>
 
@@ -187,7 +187,7 @@ export default function Reviews() {
                             company={"John Sisk"}
                             variant={"Welfare Cleaning (Wembley)"}>
                             I have managed Elite with the welfare management and I would have no
-                            problem recommending them. They have also been the team's no 1
+                            problem recommending them. They have also been the team&apos;s no 1
                             builders clean contractor over the years for Sisk on past projects
                             (December 2023)
                         </ReviewWidget>

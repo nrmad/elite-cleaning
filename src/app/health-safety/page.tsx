@@ -3,7 +3,7 @@
 import AnimateComponent from "@/components/AnimateComponent";
 import { AnimateNumber } from "@/components/AnimateNumber";
 import { Footer } from "@/components/Footer";
-import { TopBar } from "@/components/Topbar";
+import { NavigationBar } from "@/components/NavigationBar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -23,11 +23,11 @@ import { AvatarUser } from "@/components/AvatarUser";
 import { ImageWidget } from "@/components/ImageWidget";
 
 export default function HealthSafety() {
-  // just noticed the topbar should shrink on sticky motion
+  // just noticed the NavigationBar should shrink on sticky motion
 
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <TopBar />
+      <NavigationBar />
 
       <div className=" pt-20 pl-8 pr-8 pb-32 flex flex-col space-y-8 z-10 w-full max-w-screen-xl">
         <div className="w-full flex flex-col space-y-16 justify-center items-center ">
@@ -233,29 +233,35 @@ export default function HealthSafety() {
                 end: { opacity: 1 },
               }}
             >
-              <ImageWidget
-                url="/chas-logo.svg"
-                name="chas"
-                className="object-contain "
-                height={100}
-                width={225}
-              />
-              <ImageWidget
-                url="/constructionline-gold-logo.svg"
-                name="constructionline"
-                className="object-contain "
-                height={100}
-                width={225}
-              />
+              <div className="w-fit flex justify-center ">
+                <ImageWidget
+                  url="/chas-logo-cropped.svg"
+                  name="chas"
+                  className="object-contain "
+                  height={60}
+                  width={100}
+                />
+              </div>
+              <div className="w-fit  flex justify-center ">
 
-              <ImageWidget
-                url="/achilles-logo.svg"
-                name="chas"
-                className="object-contain "
-                height={100}
-                width={225}
-              />
+                <ImageWidget
+                  url="/constructionline-logo.svg"
+                  name="constructionline"
+                  className="object-contain"
+                  height={60}
+                  width={225}
+                />
+              </div>
 
+              <div className="w-fit flex justify-center ">
+                <ImageWidget
+                  url="/achilles-logo.svg"
+                  name="chas"
+                  className="object-contain "
+                  height={60}
+                  width={200}
+                />
+              </div>
 
             </AnimateComponent>
           </div>

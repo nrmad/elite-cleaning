@@ -1,7 +1,7 @@
 import AnimateComponent from "@/components/AnimateComponent";
 import Box from "@/components/Box";
 import { Footer } from "@/components/Footer";
-import { TopBar } from "@/components/Topbar";
+import { NavigationBar } from "@/components/NavigationBar";
 import { TypographyH2 } from "@/components/ui/typographyH2";
 import { TypographyH4 } from "@/components/ui/typographyH4";
 import { TypographyP } from "@/components/ui/typographyP";
@@ -16,7 +16,7 @@ export default function Sectors() {
 
     return (
         <main className="flex min-h-screen flex-col items-center">
-            <TopBar />
+            <NavigationBar />
             <div className="w-full from-theme to-muted from-5% to-95% bg-gradient-to-r flex flex-col items-center pt-20 pb-20">
                 <AnimateComponent
                     // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
@@ -66,7 +66,7 @@ export default function Sectors() {
                                 </TypographyP>
                                 <TypographyP>
                                     We offer our clients in both the private and public sectors a national service with a personal touch. By focusing
-                                    on the specific needs of each project, we ensure quality and reliability in every job we undertake. Whether it's a
+                                    on the specific needs of each project, we ensure quality and reliability in every job we undertake. Whether it&apos;s a
                                     hospital, a hotel, an office building, a school, a leisure facility, or a retail space, our expert teams are
                                     dedicated to providing the best cleaning services available.
                                 </TypographyP>

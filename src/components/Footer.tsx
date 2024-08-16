@@ -3,7 +3,7 @@
 import { ReactNode } from "react";
 
 import Link from "next/link";
-// import SocialLogo from "social-logos";
+import SocialLogo from "social-logos";
 import { Separator } from "@radix-ui/react-separator";
 import { CopyrightIcon } from "lucide-react";
 import { TypographyH4 } from "./ui/typographyH4";
@@ -26,13 +26,13 @@ export function Footer(props: MyProps) {
             <TypographyH4 className="">Elite Cleaning</TypographyH4>
             <ul className="mt-4 space-y-4">
               <li>
-                <Link href="/faqs">About Us</Link>
+                <Link href="/about">About Us</Link>
               </li>
               <li>
-                <Link href="/help">Services</Link>
+                <Link href="/">Services</Link>
               </li>
               <li>
-                <Link href="/help">Sustainability</Link>
+                <Link href="/">Sustainability</Link>
               </li>
             </ul>
           </div>
@@ -41,13 +41,13 @@ export function Footer(props: MyProps) {
             <TypographyH4 className=" ">Help</TypographyH4>
             <ul className="mt-4 space-y-4">
               <li>
-                <Link href="/faqs">FAQs</Link>
+                <Link href="/contact">FAQs</Link>
               </li>
               <li>
-                <Link href="/help">Help Centre</Link>
+                <Link href="/contact">Help Centre</Link>
               </li>
               <li>
-                <Link href="/help">Contact Us</Link>
+                <Link href="/contact">Contact Us</Link>
               </li>
             </ul>
           </div>
@@ -56,25 +56,25 @@ export function Footer(props: MyProps) {
             <TypographyH4 className="">Connect</TypographyH4>
             <div className="flex mt-4 space-x-4">
               <Link href="/facebook">
-                {/* <SocialLogo
+                <SocialLogo
                   icon="facebook"
                   size={24}
                   className="fill-primary-foreground "
-                /> */}
+                />
               </Link>
               <Link href="/linkedin">
-                {/* <SocialLogo
+                <SocialLogo
                   icon="linkedin"
                   size={24}
                   className="fill-primary-foreground"
-                /> */}
+                />
               </Link>
               <Link href="/instagram">
-                {/* <SocialLogo
+                <SocialLogo
                   icon="instagram"
                   size={24}
                   className="fill-primary-foreground"
-                /> */}
+                />
               </Link>
             </div>
 

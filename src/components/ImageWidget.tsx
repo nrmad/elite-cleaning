@@ -26,7 +26,7 @@ export function ImageWidget({
           src={url}
           alt={name}
           fill
-          className={cn("fill-black", className)}
+          className={cn("fill-black ", className)}
         // objectFit={"cover"}
         />
       </div >

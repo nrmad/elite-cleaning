@@ -3,7 +3,7 @@
 import AnimateComponent from "@/components/AnimateComponent";
 import { AnimateNumber } from "@/components/AnimateNumber";
 import { Footer } from "@/components/Footer";
-import { TopBar } from "@/components/Topbar";
+import { NavigationBar } from "@/components/NavigationBar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -22,12 +22,12 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { AvatarUser } from "@/components/AvatarUser";
 
 export default function About() {
-  // just noticed the topbar should shrink on sticky motion
+  // just noticed the NavigationBar should shrink on sticky motion
 
 
   return (
     <main className="flex min-h-screen flex-col items-center">
-      <TopBar />
+      <NavigationBar />
 
       <div className=" pt-20 pl-8 pr-8 pb-32 flex flex-col space-y-8 z-10 w-full max-w-screen-xl">
         <div className="w-full flex flex-col space-y-32 justify-center ">
@@ -63,7 +63,7 @@ export default function About() {
           >
             <div className="w-1/2">
               <TypographyH2 className="text-4xl">
-                We're elevating builders clean services for those who seek
+                We&apos;re elevating builders clean services for those who seek
                 exceptional quality.
               </TypographyH2>
             </div>
@@ -75,7 +75,7 @@ export default function About() {
                 Builders Cleans and Welfare Cleaning for Construction Companies.
                 We are a well established and recognised family run business,
                 our services cover London and the Home Counties and we are proud
-                to be working with the majority of the UK's leading construction
+                to be working with the majority of the UK&apos;s leading construction
                 companies.
               </TypographyP>
               <TypographyP className=" leading-6">
@@ -120,7 +120,7 @@ export default function About() {
                 </TypographyP>
                 <TypographyP className="text-sm leading-6">
                   All operatives will arrive on site wearing the appropriate PPE
-                  and equipment to complete the client's chosen cleaning
+                  and equipment to complete the client&apos;s chosen cleaning
                   package. Our Management team will work closely with Quantity
                   Surveyors, Project Managers and Site Managers to ensure the
                   clients benefit from our hassle free, piece of mind outcomes

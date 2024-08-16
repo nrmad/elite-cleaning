@@ -5,7 +5,7 @@ import { AnimateNumber } from "@/components/AnimateNumber";
 import Box from "@/components/Box";
 import { ImageWidget } from "@/components/ImageWidget";
 import { Footer } from "@/components/Footer";
-import { TopBar } from "@/components/Topbar";
+import { NavigationBar } from "@/components/NavigationBar";
 import { TypographyH1 } from "@/components/ui/typographyH1";
 import { TypographyH2 } from "@/components/ui/typographyH2";
 import { TypographyH3 } from "@/components/ui/typographyH3";
@@ -14,11 +14,19 @@ import { TypographyP } from "@/components/ui/typographyP";
 import { cn } from "@/lib/utils";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
-import { CalendarCheck, HardHat, IterationCcw, IterationCw, PackageCheck, PaintBucket, Sparkles, UsersRound } from "lucide-react";
+import { Building2, CalendarCheck, Droplet, Droplets, HardHat, IterationCcw, IterationCw, PackageCheck, PaintBucket, Sparkles, UsersRound } from "lucide-react";
 import { Card } from "@/components/ui/card";
 import ReviewWidget from "@/components/ReviewWidget";
+import { Step, StepItem, Stepper, useStepper } from "@/components/stepper";
+import { Button } from "@/components/ui/button";
+import FixedStepper from "@/components/FixedStepper";
 
 const montserrat = Montserrat({ weight: "400", subsets: ["latin"] });
+
+// export const revalidate = 0; // 0 means the page will be revalidated on every request
+
+
+
 
 export default function Home() {
 
@@ -27,9 +35,10 @@ export default function Home() {
   // !!! TODO: add products and historic jobs
   // !!! TODO: GRADIENT OPACITY DELAY
 
+
   return (
-    <main className="flex min-h-screen flex-col items-center">
-      <TopBar />
+    <main className="flex w-screen   min-h-screen flex-col items-center">
+      <NavigationBar />
       <div className="w-full relative z-[-1] md:h-[400px] lg:h-[500px] 2xl:h-[600px] bg-[url('/banner1.jpg')] bg-center bg-cover ">
 
         <Box className="absolute left-0 right-0 bottom-0 h-[800px] clip-complex-polygon" />
@@ -214,7 +223,7 @@ export default function Home() {
                   </TypographyP>
                   <TypographyP>
                     We are a well-established and recognized family-run business. Our services cover London and the Home Counties, and we are proud
-                    to be working with the majority of the UK's leading construction companies. Our commitment to quality and reliability has earned
+                    to be working with the majority of the UK&apos;s leading construction companies. Our commitment to quality and reliability has earned
                     us a solid reputation in the industry.
                   </TypographyP>
                   <TypographyP>
@@ -225,6 +234,11 @@ export default function Home() {
                 </div>
               </AnimateComponent>
             </div>
+          </div>
+
+
+          <div className="flex w-full flex-col">
+            <FixedStepper />
           </div>
 
 
@@ -263,35 +277,35 @@ export default function Home() {
               }}
             >
               <div className="w-5/6 flex items-center justify-between ">
-                <ImageWidget
-                  url="/chas-logo.svg"
-                  name="chas"
-                  className="object-contain"
-                  height={100}
-                  width={225}
-                />
-                {/* <ImageWidget
-                url="/constructionline-silver-test.svg"
-                name="constructionline"
-                className="object-contain"
-                height={175}
-                width={225}
-              /> */}
-                <ImageWidget
-                  url="/constructionline-gold-logo.svg"
-                  name="constructionline"
-                  className="object-contain"
-                  height={100}
-                  width={225}
-                />
+                <div className="w-1/3 flex justify-center">
+                  <ImageWidget
+                    url="/chas-logo-cropped.svg"
+                    name="chas"
+                    className="object-contain "
+                    height={60}
+                    width={225}
+                  />
+                </div>
+                <div className="w-1/3  flex justify-center">
 
-                <ImageWidget
-                  url="/achilles-logo.svg"
-                  name="chas"
-                  className="object-contain"
-                  height={100}
-                  width={225}
-                />
+                  <ImageWidget
+                    url="/constructionline-logo.svg"
+                    name="constructionline"
+                    className="object-contain"
+                    height={60}
+                    width={225}
+                  />
+                </div>
+
+                <div className="w-1/3 flex justify-center">
+                  <ImageWidget
+                    url="/achilles-logo.svg"
+                    name="chas"
+                    className="object-contain "
+                    height={60}
+                    width={200}
+                  />
+                </div>
 
                 {/* <ClientWidget
                 url="/constructionline-gold-logo.svg"
@@ -340,7 +354,7 @@ export default function Home() {
               role={"Project Director"}
               company={"John Sisk"}
               variant={"Welfare Cleaning (Wembley)"}>
-              Elite are our 'go to' builder clean contractor. They have helped us
+              Elite are our &apos;go to&apos; builder clean contractor. They have helped us
               deliver over 2000 apartments here in recent years as well as
               managing the site welfare cleaning. Highly recommended (December
               2023)
@@ -352,7 +366,7 @@ export default function Home() {
               role={"Project Director"}
               company={"John Sisk"}
               variant={"Welfare Cleaning (Wembley)"}>
-              Elite are our 'go to' builder clean contractor. They have helped us
+              Elite are our &apos;go to&apos; builder clean contractor. They have helped us
               deliver over 2000 apartments here in recent years as well as
               managing the site welfare cleaning. Highly recommended (December
               2023)
@@ -396,9 +410,9 @@ export default function Home() {
             }}
           >
             <div className="relative w-full flex items-center justify-center overflow-visible pt-8 pb-8  ">
-              <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-background  via-theme/25  via-90% to-background  to-90% " />
-              <div className="h-[600px] w-full max-w-screen-xl  grid  gap-4 grid-cols-3 grid-rows-2 ">
-                <Box className="w-full flex flex-col p-8 items-center justify-center  space-y-8 ">
+              <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-background via-mutedTheme25 via-90% to-background to-90% " />
+              <div className="h-[600px] w-full max-w-screen-xl  grid  gap-4 grid-cols-3 grid-rows-2  ">
+                <Box className="w-full flex flex-col p-8 items-center justify-center space-y-8  ">
                   <div className="flex flex-col  justify-center space-y-2">
 
                     <div className="w-fit flex mb-8 border border-solid border-theme/20 p-4 rounded-full">
@@ -414,7 +428,7 @@ export default function Home() {
                         <TypographyH3 className="">Base</TypographyH3>
                       </span>
                       <p className=" ">
-                        Base builders cleans handle glazing, balconies, and removes construction residue, ensuring a spotless, ready-to-use space.                      </p>
+                        Base builders cleans handle glazing, balconies, and removes construction residue, ensuring a spotless, ready-to-use space.</p>
                     </div>
                   </div>
                 </Box>
@@ -433,7 +447,7 @@ export default function Home() {
                       <TypographyH3 className="">Reclean</TypographyH3>
                     </span>
                     <p className=" ">
-                      A 'Re-Clean' follows the initial clean, removing deposits from remedial work and optionally buffing internal glazing.
+                      A &apos;Re-Clean&apos; follows the initial clean, removing deposits from remedial work and optionally buffing internal glazing.
                     </p>
                   </div>
                 </Box>
@@ -452,7 +466,7 @@ export default function Home() {
                       <TypographyH3 className="">Sparkle</TypographyH3>
                     </span>
                     <p className=" ">
-                      A 'Sparkle Clean' removes dust and cleans floors after a re-clean, with optional internal glazing buffing.
+                      A &apos;Sparkle Clean&apos; removes dust and cleans floors after a re-clean, with optional internal glazing buffing.
                     </p>
                   </div>
                 </Box>
@@ -468,11 +482,10 @@ export default function Home() {
                       </div> */}
                     </div>
                     <span className="flex items-center space-x-2">
-                      <TypographyH3 className="">Gleam</TypographyH3>
+                      <TypographyH3 className="">Welfare</TypographyH3>
                     </span>
                     <p className=" ">
-                      Our gleam service ensures businesses shine with a detailed, eco-friendly clean, leaving every corner sparkling and pristine.
-
+                      Welfare cleans ensure high-quality service, keeping site cabins spotless and hygienic, providing essential amenities for workers.
                     </p>
                   </div>
                 </Box>
@@ -483,18 +496,17 @@ export default function Home() {
                   <div className="flex flex-col  justify-center space-y-2">
 
                     <div className="w-fit flex mb-8 border border-solid border-theme/20 p-4 rounded-full">
-                      <HardHat className="w-5 h-5  stroke-theme/70" />
+                      <Building2 className="w-5 h-5  stroke-theme/70" />
 
                       {/* <div className="relative w-36 h-36  bg-white/60 rounded-full overflow-hidden ">
                         <Image src="/undraw-done.svg" alt="qa" fill />
                       </div> */}
                     </div>
                     <span className="flex items-center space-x-2">
-                      <TypographyH3 className="">Gleam</TypographyH3>
+                      <TypographyH3 className="">Abseiling</TypographyH3>
                     </span>
                     <p className=" ">
-                      Our gleam service ensures businesses shine with a detailed, eco-friendly clean, leaving every corner sparkling and pristine.
-
+                      Abseiling cleans use expert methods to ensure top-quality service, keeping building exteriors spotless with precision.
                     </p>
                   </div>
                 </Box>
@@ -503,21 +515,21 @@ export default function Home() {
                   <div className="flex flex-col  justify-center space-y-2">
 
                     <div className="w-fit flex mb-8 border border-solid border-theme/20 p-4 rounded-full">
-                      <HardHat className="w-5 h-5  stroke-theme/70" />
+                      <Droplets className="w-5 h-5  stroke-theme/70" />
 
                       {/* <div className="relative w-36 h-36  bg-white/60 rounded-full overflow-hidden ">
                         <Image src="/undraw-done.svg" alt="qa" fill />
                       </div> */}
                     </div>
                     <span className="flex items-center space-x-2">
-                      <TypographyH3 className="">Gleam</TypographyH3>
+                      <TypographyH3 className="">Reach</TypographyH3>
                     </span>
                     <p className=" ">
-                      Our gleam service ensures businesses shine with a detailed, eco-friendly clean, leaving every corner sparkling and pristine.
-
+                      Reach cleans use reach and wash systems to deliver outstanding external window cleaning services.
                     </p>
                   </div>
                 </Box>
+
               </div>
 
             </div>
@@ -556,7 +568,7 @@ export default function Home() {
                     builds trust with our clients.
                   </TypographyP>
                   <TypographyP>
-                    Our success, with a 90% repeat business rate, is due to our exceptional team's dedication. Their unwavering commitment is the
+                    Our success, with a 90% repeat business rate, is due to our exceptional team&apos;s dedication. Their unwavering commitment is the
                     cornerstone of our continued excellence. By fostering a collaborative work environment and investing in training, we consistently
                     deliver projects that exceed client expectations and solidify our industry leadership.
                   </TypographyP>
