@@ -73,7 +73,7 @@ export default function FixedStepper() {
                         }}
                     >
                         <div className="h-[700px] flex flex-col items-start my-4 text-primary rounded-md">
-                            <div className="flex justify-between items-center w-full"><h1 className="text-xl w-fit">{"Elite's journey begins"}</h1> <p className="text-sm text-muted-foreground">Febuary 2000</p></div>
+                            <div className="flex justify-between items-center w-full"><h1 className="text-xl w-fit">{"Elites journey begins"}</h1> <p className="text-sm text-muted-foreground">Febuary 2000</p></div>
                             <TypographyP>
                                 Elite Cleaning began with just the owners, who started from the ground up by handling every aspect of the cleaning work
                                 themselves. Without any outside assistance, they tackled each project with a deep commitment to excellence, ensuring
@@ -81,7 +81,7 @@ export default function FixedStepper() {
                                 crucial in the early days, where meticulous attention to detail and a personal touch were central to every job.
                             </TypographyP>
                             <TypographyP>
-                                The owners' dedication to quality and their willingness to take on every task personally laid a strong foundation for
+                                The owners&apos; dedication to quality and their willingness to take on every task personally laid a strong foundation for
                                 the company. Their journey began with nothing but a passion for their work and a relentless drive to deliver outstanding
                                 results. This spirit of hard work and personal involvement remains at the core of Elite Cleaning, continuing to guide
                                 and inspire the team as we uphold the same high standards that defined our beginnings.

@@ -27,99 +27,16 @@ import { TypographyH4 } from "./ui/typographyH4";
 
 import Image from "next/image";
 import { TypographyP } from "./ui/typographyP";
-import { useInView } from "react-intersection-observer";
+// import { useInView } from "react-intersection-observer";
 import { usePathname } from 'next/navigation';
 
-// import {
-//   Command,
-//   CommandDialog,
-//   CommandEmpty,
-//   CommandGroup,
-//   CommandInput,
-//   CommandItem,
-//   CommandList,
-//   CommandSeparator,
-//   CommandShortcut,
-// } from "@/components/ui/command";
 
-// import ListItem from "./ui/ListItem";
-// import { rootCategories } from "@/lib/data";
-// import { Button } from "@/components/ui/button"
-
-// interface ChipProps {
-//     children?: ReactNode;
-//     has: boolean;
-// }
-// { children, has }: ChipProps
-
-//border-2 border-slate-200
 
 export function NavigationBar() {
-  // md:max-w-screen-xl
-
-  // TODO: BUG where if you scroll right on view change point it loops
-  // TODO: Make NavigationBar glassmorphic
-
-  // TODO: Temp fix the size of NavigationBar fixed but maybe come back
-
-
-  // const firstView = useRef<boolean>(true)
-  // const test = useRef<boolean>(true)
-  // const [visible, setVisible] = useState<boolean>(true)
-
-  // const { ref, inView, entry } = useInView({
-  //   initialInView: true,
-  //   threshold: 0.4,
-  // });
-
-
-  // console.log('a ' + inView)
-  // console.log('b ' + visible)
-
-  // useLayoutEffect(() => {
-
-  //   console.log('running ' + window.scrollY)
-
-  //   if (firstView.current) {
-  //     // visible.current = window.scrollY <= 34
-  //     test.current = window.scrollY <= 34
-  //     setVisible(window.scrollY <= 34)
-  //     console.log("what we set " + (test.current))
-  //     firstView.current = false
-  //   }
-
-
-
-  //   console.log("here " + firstView.current)
-  // }, []);
-
-  // useLayoutEffect(() => {
-
-  //  firstView.current = inView
-
-
-  //   console.log("here " + firstView.current)
-  // }, []);
 
 
   const pathname = usePathname();
 
-  // const [barHeight, setBarHeight] = useState(110);
-
-  // useEffect(() => {
-  //   // Update only if the `inView` state has changed
-  //   if (inView !== inViewRef.current) {
-  //     setBarHeight(inView ? 110 : 90);
-  //     inViewRef.current = inView; // Update the ref
-  //   }
-  // }, [inView]);
-
-
-
-  // 90px
-  //h-[${inView ? 110 : 90}px]
-
-  //ref={ref}
 
   return (
     <>
