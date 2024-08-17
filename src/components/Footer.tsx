@@ -18,13 +18,13 @@ export function Footer(props: MyProps) {
 
   // below left aligned details and link for app
   return (
-    <div className="w-full bg-theme h-96 flex flex-col justify-between pt-20">
+    <div className="w-full bg-theme sm:h-96 flex flex-col justify-between pt-20">
       {/* <div className="w-10 h-10 bg-[#01456a] border-black border-solid "></div> */}
       <div className="w-full flex justify-center pl-8 pr-8">
-        <div className="w-full  max-w-screen-xl flex space-x-24 ">
-          <div className="w-1/5 text-primary-foreground flex flex-col ">
+        <div className="w-full mb-16 sm:mb-0 max-w-screen-xl grid grid-cols-2 gap-8  sm:gap-0 sm:flex sm:space-x-24 ">
+          <div className="w-full sm:w-1/5 text-primary-foreground flex flex-col ">
             <TypographyH4 className="">Elite Cleaning</TypographyH4>
-            <ul className="mt-4 space-y-4">
+            <ul className="mt-4 space-y-1 sm:space-y-4">
               <li>
                 <Link href="/about">About Us</Link>
               </li>
@@ -37,9 +37,9 @@ export function Footer(props: MyProps) {
             </ul>
           </div>
 
-          <div className="w-1/5 flex flex-col text-primary-foreground">
+          <div className="w-full sm:w-1/5 flex flex-col text-primary-foreground">
             <TypographyH4 className=" ">Help</TypographyH4>
-            <ul className="mt-4 space-y-4">
+            <ul className="mt-4  space-y-1 sm:space-y-4">
               <li>
                 <Link href="/contact">FAQs</Link>
               </li>
@@ -52,7 +52,7 @@ export function Footer(props: MyProps) {
             </ul>
           </div>
 
-          <div className="w-1/5 flex flex-col text-primary-foreground">
+          <div className="w-full sm:w-1/5 flex flex-col text-primary-foreground">
             <TypographyH4 className="">Connect</TypographyH4>
             <div className="flex mt-4 space-x-4">
               <Link href="/facebook">
@@ -92,7 +92,7 @@ export function Footer(props: MyProps) {
           className="w-full h-[1px] bg-primary-foreground "
         />
 
-        <div className="w-full flex h-20 justify-between max-w-screen-xl text-primary-foreground pl-8 pr-8">
+        <div className="w-full flex h-20 justify-between max-w-screen-xl text-primary-foreground ">
           <div className="flex space-x-4">
             <div className="h-full flex items-center">
               <Link href="/facebook">
@@ -120,3 +120,5 @@ export function Footer(props: MyProps) {
     </div>
   );
 }
+
+//pl-8 pr-8

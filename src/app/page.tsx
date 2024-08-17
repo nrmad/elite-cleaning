@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <main className="flex w-screen   min-h-screen flex-col items-center">
       <NavigationBar />
-      <div className="w-full relative z-[-1] md:h-[400px] lg:h-[500px] 2xl:h-[600px] bg-[url('/banner1.jpg')] bg-center bg-cover ">
+      <div className="w-full relative z-[-1] h-[300px] md:h-[400px] lg:h-[500px] 2xl:h-[600px] bg-[url('/banner1.jpg')] bg-center bg-cover ">
 
         <Box className="absolute left-0 right-0 bottom-0 h-[800px] clip-complex-polygon" />
 
@@ -60,7 +60,7 @@ export default function Home() {
                   </TypographyH2>
                 </AnimateComponent>
                 <AnimateComponent
-                  // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
+                  // transition={{ type: "spring", bounce: 0, duration: 0.6 }} font-extralight
                   variants={{
                     start: { opacity: 0, x: -25 },
                     end: { opacity: 1, x: 0 },
@@ -70,9 +70,10 @@ export default function Home() {
                     <span
                       className={cn(
                         montserrat.className,
-                        "font-extralight font-normal"
+                        " font-normal"
                       )}
                     >
+
                       Elite Expertise
                     </span>
                   </TypographyH2>
@@ -82,8 +83,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <div className=" pt-52 pl-8 pr-8 pb-32 flex flex-col space-y-8 z-10 w-full max-w-screen-xl">
-        <div className="w-full flex flex-col space-y-32 justify-center">
+      <div className="pt-52 pl-4 pr-4 sm:pl-8 sm:pr-8 pb-32 flex flex-col space-y-8 z-10 w-full max-w-screen-xl">
+        <div className="w-full flex flex-col space-y-16 sm:space-y-32 justify-center">
           <div className="w-full flex flex-col space-y-16 ">
             <div className="w-full flex flex-col space-y-4 ">
               <div className="w-full flex justify-center">
@@ -119,9 +120,9 @@ export default function Home() {
               </div>
             </div>
             <div className="w-full flex justify-center pb-16">
-              <div className="w-full flex justify-between space-x-8 ">
+              <div className="w-full flex flex-col  sm:flex-row justify-between space-y-4 sm:space-y-0 sm:space-x-8 ">
                 <AnimateComponent
-                  className="w-1/3 "
+                  className="w-full sm:w-1/3 "
                   variants={{
                     start: { opacity: 0 },
                     end: { opacity: 1 },
@@ -141,7 +142,7 @@ export default function Home() {
                 </AnimateComponent>
 
                 <AnimateComponent
-                  className="w-1/3 "
+                  className="w-full sm:w-1/3 "
                   variants={{
                     start: { opacity: 0 },
                     end: { opacity: 1 },
@@ -160,7 +161,7 @@ export default function Home() {
                 </AnimateComponent>
 
                 <AnimateComponent
-                  className="w-1/3 "
+                  className="w-full sm:w-1/3 "
                   variants={{
                     start: { opacity: 0 },
                     end: { opacity: 1 },
@@ -181,8 +182,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-full flex space-x-16 ">
-            <div className="w-1/2">
+          <div className="w-full flex  flex-col sm:flex-row  space-y-4 sm:space-y-0 sm:space-x-16 ">
+            <div className="w-full sm:w-1/2">
               <AnimateComponent
                 // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
                 variants={{
@@ -191,7 +192,7 @@ export default function Home() {
                 }}
               >
                 <div className="w-full">
-                  <div className="w-full h-[720px] relative overflow-hidden rounded-sm">
+                  <div className="w-full h-[280px] sm:h-[720px] relative overflow-hidden rounded-sm">
                     <Image
                       // height={620}
                       // width={465}
@@ -204,7 +205,7 @@ export default function Home() {
                 </div>
               </AnimateComponent>
             </div>
-            <div className="w-1/2">
+            <div className="w-full sm:w-1/2">
               <AnimateComponent
                 // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
                 variants={{
@@ -252,7 +253,7 @@ export default function Home() {
                   end: { opacity: 1, y: 0 },
                 }}
               >
-                <TypographyH2 className="">Elite Health and Safety</TypographyH2>
+                <TypographyH2 className="text-center">Elite Health and Safety</TypographyH2>
               </AnimateComponent>
               <AnimateComponent
                 className="w-full justify-center"
@@ -262,7 +263,7 @@ export default function Home() {
                   end: { opacity: 1, y: 0 },
                 }}
               >
-                <p className="mt-0 text-center w-2/5">
+                <p className="mt-0 text-center w-full sm:w-2/5">
                   We hold multiple accreditations to ensure top health and safety
                   standards on all projects.
                 </p>
@@ -276,7 +277,7 @@ export default function Home() {
                 end: { opacity: 1 },
               }}
             >
-              <div className="w-5/6 flex items-center justify-between ">
+              <div className="w-full sm:w-5/6 flex flex-col sm:flex-row items-center justify-between ">
                 <div className="w-1/3 flex justify-center">
                   <ImageWidget
                     url="/chas-logo-cropped.svg"
@@ -333,11 +334,11 @@ export default function Home() {
             end: { opacity: 1 },
           }}
         >
-          <div className="w-full relative p-8 flex space-x-4  bg-[url('/construction4.jpg')] bg-bottom bg-cover ">
+          <div className="w-full relative p-4 sm:p-8 flex sm:space-x-4  bg-[url('/construction4.jpg')] bg-bottom bg-cover ">
             <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-60" />
 
             <ReviewWidget
-              className="w-1/3 h-64 text-primary-foreground justify-between  "
+              className="w-full sm:w-1/3 md:h-64 text-primary-foreground justify-between  "
               name={"Kavishnan Jeyarajah"}
               role={"Site Manager"}
               company={"John Sisk"}
@@ -349,7 +350,7 @@ export default function Home() {
             </ReviewWidget>
 
             <ReviewWidget
-              className="w-1/3 h-64 text-primary-foreground justify-between  "
+              className="w-full hidden sm:flex sm:w-1/3  md:h-64 text-primary-foreground justify-between  "
               name={"Daniel Makell"}
               role={"Project Director"}
               company={"John Sisk"}
@@ -361,7 +362,7 @@ export default function Home() {
             </ReviewWidget>
 
             <ReviewWidget
-              className="w-1/3 h-64 text-primary-foreground justify-between  "
+              className="w-full  hidden sm:flex sm:w-1/3 md:h-64 text-primary-foreground justify-between  "
               name={"Daniel Makell"}
               role={"Project Director"}
               company={"John Sisk"}
@@ -376,7 +377,7 @@ export default function Home() {
         </AnimateComponent>
         <div className="w-full flex flex-col  space-y-16 justify-center items-center overflow-visible ">
           <div className="w-full flex flex-col  justify-center items-center overflow-visible">
-            <div className=" w-2/5 ">
+            <div className="w-full sm:w-2/5 pl-4 pr-4 sm:pl-8 sm:pr-8">
               <AnimateComponent
                 className="w-full justify-start"
                 transition={{ type: "spring", bounce: 0, duration: 0.6 }}
@@ -409,9 +410,9 @@ export default function Home() {
               end: { opacity: 1 },
             }}
           >
-            <div className="relative w-full flex items-center justify-center overflow-visible pt-8 pb-8  ">
+            <div className="relative w-full flex items-center justify-center overflow-visible pt-8 pb-8 pl-4 pr-4 sm:pl-0 sm:pr-0  ">
               <div className="absolute top-0 bottom-0 left-0 right-0 bg-gradient-to-b from-background via-mutedTheme25 via-90% to-background to-90% " />
-              <div className="h-[600px] w-full max-w-screen-xl  grid  gap-4 grid-cols-3 grid-rows-2  ">
+              <div className="sm:h-[600px] w-full max-w-screen-xl grid gap-4 grid-cols-1 sm:grid-cols-3 sm:grid-rows-2  ">
                 <Box className="w-full flex flex-col p-8 items-center justify-center space-y-8  ">
                   <div className="flex flex-col  justify-center space-y-2">
 
@@ -541,8 +542,8 @@ export default function Home() {
       <div className="  pl-8 pr-8 pt-32 pb-32 flex flex-col space-y-8 z-10 w-full max-w-screen-xl overflow-visible">
         <div className="w-full flex flex-col space-y-32 justify-center overflow-visible">
 
-          <div className="w-full flex space-x-16 ">
-            <div className="w-1/2">
+          <div className="w-full flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-16 ">
+            <div className="w-full sm:w-1/2">
               <AnimateComponent
                 // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
                 variants={{
@@ -576,7 +577,7 @@ export default function Home() {
                 </div>
               </AnimateComponent>
             </div>
-            <div className="w-1/2">
+            <div className="w-full sm:w-1/2">
               <AnimateComponent
                 // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
                 variants={{
@@ -585,7 +586,7 @@ export default function Home() {
                 }}
               >
                 <div className="w-full">
-                  <div className=" h-[720px] w-full relative overflow-hidden rounded-sm">
+                  <div className="h-[280px]  sm:h-[720px] w-full relative overflow-hidden rounded-sm">
                     <Image
                       // height={620}
                       // width={465}

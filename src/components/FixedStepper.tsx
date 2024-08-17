@@ -72,7 +72,7 @@ export default function FixedStepper() {
                             end: { opacity: 1, y: 0 },
                         }}
                     >
-                        <div className="h-[700px] flex flex-col items-start my-4 text-primary rounded-md">
+                        <div className="h-fit sm:h-[700px] flex flex-col items-start my-4 text-primary rounded-md">
                             <div className="flex justify-between items-center w-full"><h1 className="text-xl w-fit">{"Elites journey begins"}</h1> <p className="text-sm text-muted-foreground">Febuary 2000</p></div>
                             <TypographyP>
                                 Elite Cleaning began with just the owners, who started from the ground up by handling every aspect of the cleaning work
@@ -97,7 +97,7 @@ export default function FixedStepper() {
                             end: { opacity: 1, y: 0 },
                         }}
                     >
-                        <div className="h-[700px] flex flex-col items-start my-4 text-primary rounded-md">
+                        <div className="h-fit sm:h-[700px] flex flex-col items-start my-4 text-primary rounded-md">
                             <div className="flex justify-between items-center w-full"><h1 className="text-xl w-fit">{"Our move to Incorporation"}</h1> <p className="text-sm text-muted-foreground">March 2003</p></div>
 
                             <TypographyP>
@@ -124,7 +124,7 @@ export default function FixedStepper() {
                             end: { opacity: 1, y: 0 },
                         }}
                     >
-                        <div className="h-[400px] flex flex-col items-start my-4 text-primary rounded-md">
+                        <div className="h-fit sm:h-[400px] flex flex-col items-start my-4 text-primary rounded-md">
                             <div className="flex justify-between items-center w-full"><h1 className="text-xl w-fit">{"Growth from hard work"}</h1> <p className="text-sm text-muted-foreground"> May 2008</p></div>
 
                             <TypographyP>
