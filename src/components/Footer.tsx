@@ -99,11 +99,11 @@ export function Footer(props: MyProps) {
                 <TypographyP>Privacy Policy</TypographyP>
               </Link>
             </div>
-            <div className="h-full flex items-center">
+            {/* <div className="h-full flex items-center">
               <Link href="/facebook">
                 <TypographyP>Cookie Policy</TypographyP>
               </Link>
-            </div>
+            </div> */}
 
             <div className="h-full flex items-center">
               <Link href="/facebook">

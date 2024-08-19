@@ -39,171 +39,6 @@ export function NavigationBar() {
   const pathname = usePathname();
 
 
-  // const navigation = (
-  //   <>
-  //     <NavigationMenuItem>
-  //       <Link href="/" legacyBehavior passHref className="w-full">
-  //         <NavigationMenuLink
-  //           className={cn(navigationMenuTriggerStyle(), "w-full ", pathname === '/' ? "text-black" : "")}
-  //         >
-  //           {/* <p className={` text-black hover:text-opacity-50`}>About</p> */}
-  //           Home
-  //         </NavigationMenuLink>
-  //       </Link>
-  //     </NavigationMenuItem>
-
-  //     <NavigationMenuItem>
-  //       <Link
-  //         href="/clients"
-  //         legacyBehavior
-  //         passHref
-  //         className="w-full"
-  //       >
-  //         <NavigationMenuLink
-  //           className={cn(navigationMenuTriggerStyle(), "w-full ", pathname === '/clients' ? "text-black" : "")}
-  //         >
-  //           {/* <p className={` text-black hover:text-opacity-50`}>About</p> */}
-  //           Clients
-  //         </NavigationMenuLink>
-  //       </Link>
-  //     </NavigationMenuItem>
-
-  //     <NavigationMenuItem>
-  //       <Link
-  //         href="/health-safety"
-  //         legacyBehavior
-  //         passHref
-  //         className="w-full"
-  //       >
-  //         <NavigationMenuLink
-  //           className={cn(navigationMenuTriggerStyle(), "w-full ", pathname === '/health-safety' ? "text-black" : "")}
-  //         >
-  //           {/* <p className={` text-black hover:text-opacity-50`}>About</p> */}
-  //           Safety
-  //         </NavigationMenuLink>
-  //       </Link>
-  //     </NavigationMenuItem>
-  //     <NavigationMenuItem
-  //     // key={title + "index"}
-  //     // onMouseOver={() => {
-  //     //   setSubcategory1(0);
-  //     // }}
-  //     >
-  //       <NavigationMenuTrigger className="" >
-  //         <Link
-  //           href="/sectors"
-  //           legacyBehavior
-  //           passHref
-  //           className={"w-full"}
-  //         >
-  //           <NavigationMenuLink
-  //             className={cn(pathname === '/sectors' ? "text-black" : "")}
-  //           >
-  //             {/* <p className={` text-black hover:text-opacity-50`}>About</p> */}
-  //             Sectors
-  //           </NavigationMenuLink>
-  //         </Link>
-
-  //       </NavigationMenuTrigger>
-  //       <NavigationMenuContent className="bg-red-500/99 opacity-99">
-  //         {/* <NavigationMenu.Sub defaultValue="sub1"> */}
-
-  //         <div className="w-[600px] flex opacity-100">
-  //           <ul className="w-full grid gap-1 p-4 md:grid-rows-2 md:grid-cols-3 opacity-100">
-  //             <Link href="/sectors/commercial" passHref>
-  //               <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/commercial' ? "text-black" : "")}
-  //               >Commercial
-  //               </NavigationMenuLink>
-  //             </Link>
-  //             <Link href="/sectors/education" passHref>
-  //               <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/education' ? "text-black" : "")}
-  //               >Education</NavigationMenuLink>
-  //             </Link>
-
-  //             <Link href="/sectors/leisure" passHref>
-  //               <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/leisure' ? "text-black" : "")}
-  //               >
-  //                 Leisure
-  //               </NavigationMenuLink>
-  //             </Link>
-
-  //             {/* <NavigationMenuLink>
-  //               Hotel & Leisure
-  //             </NavigationMenuLink> */}
-  //             <Link href="/sectors/health" passHref>
-  //               <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/health' ? "text-black" : "")}
-  //               >Health</NavigationMenuLink>
-  //             </Link>
-
-  //             <Link href="/sectors/accommodation" passHref>
-  //               <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/accommodation' ? "text-black" : "")}
-  //               >
-  //                 Accommodation
-  //               </NavigationMenuLink>
-  //             </Link>
-
-  //             {/* <NavigationMenuLink>
-  //               Student accommodation
-  //             </NavigationMenuLink> */}
-  //             {/* <NavigationMenuLink>Residential</NavigationMenuLink> */}
-  //             <Link href="/sectors/retail" passHref>
-  //               <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/retail' ? "text-black" : "")}
-  //               >Retail</NavigationMenuLink>
-  //             </Link>
-
-  //           </ul>
-  //         </div>
-  //       </NavigationMenuContent>
-  //     </NavigationMenuItem>
-  //     <NavigationMenuItem>
-  //       <Link
-  //         href="/reviews"
-  //         legacyBehavior
-  //         passHref
-  //         className={cn("w-full")}
-  //       >
-  //         <NavigationMenuLink
-  //           className={cn(navigationMenuTriggerStyle(), "w-full ", pathname === '/reviews' ? "text-black" : "")}
-  //         >
-  //           {/* <p className={` text-black hover:text-opacity-50`}>About</p> */}
-  //           Reviews
-  //         </NavigationMenuLink>
-  //       </Link>
-  //     </NavigationMenuItem>
-
-  //     <NavigationMenuItem>
-  //       <Link
-  //         href="/about"
-  //         legacyBehavior
-  //         passHref
-  //         className="w-full"
-  //       >
-  //         <NavigationMenuLink
-  //           className={cn(navigationMenuTriggerStyle(), "w-full ", pathname === '/about' ? "text-black" : "")}
-  //         >
-  //           {/* <p className={` text-black hover:text-opacity-50`}>About</p> */}
-  //           About
-  //         </NavigationMenuLink>
-  //       </Link>
-  //     </NavigationMenuItem>
-
-  //     <NavigationMenuItem>
-  //       <Link
-  //         href="/contact"
-  //         legacyBehavior
-  //         passHref
-  //         className="w-full"
-  //       >
-  //         <NavigationMenuLink
-  //           className={cn(navigationMenuTriggerStyle(), "w-full ", pathname === '/contact' ? "text-black" : "")}
-  //         >
-  //           {/* <p className={` text-black hover:text-opacity-50`}>About</p> */}
-  //           Contact
-  //         </NavigationMenuLink>
-  //       </Link>
-  //     </NavigationMenuItem>
-  //   </>
-  // )
 
 
   return (
@@ -211,13 +46,17 @@ export function NavigationBar() {
       <div className="h-12 sm:hidden flex w-full">
         <div className="fixed z-50 top-0 left-0 right-0 flex h-12 p-2 pr-4 pl-4 w-full justify-between  isolate bg-white/60 shadow-lg ring-1 ring-black/5 backdrop-blur-lg ">
 
-          <div className="w-[80] flex justify-start ">
+          <div className="w-[80px] h-[80px] flex justify-start items-center overflow-hidden ">
             <Link href={"/"}>
               <Image
                 src="/elite.png"
                 alt="elite logo"
                 width={80}
                 height={80}
+                objectFit="contain"
+                priority
+                loading="eager"
+                layout="fixed"
               />
             </Link>
           </div>
@@ -351,7 +190,7 @@ export function NavigationBar() {
             </DrawerContent>
           </Drawer>
         </div>
-      </div>
+      </div >
 
       <div className="hidden  sm:flex items-center h-12 w-full border-b border-solid border-border isolate bg-white/60 ring-1 ring-black/5 backdrop-blur-lg ">
         <div className="w-full flex justify-center pl-8 pr-8">
@@ -382,7 +221,7 @@ export function NavigationBar() {
                   <MenuIcon />
                 </Button>
               </div> */}
-              <div className="w-[150px] flex justify-start ">
+              {/* <div className="w-[150px] flex justify-start ">
                 <Link href={"/"}>
                   <Image
                     src="/elite.png"
@@ -391,7 +230,22 @@ export function NavigationBar() {
                     height={150}
                   />
                 </Link>
+              </div> */}
+              <div className="w-[150px] flex justify-start items-center overflow-hidden ">
+                <Link href={"/"}>
+                  <Image
+                    src="/elite.png"
+                    alt="elite logo"
+                    width={150}
+                    height={150}
+                    objectFit="contain"
+                    priority
+                    loading="eager"
+                    layout="fixed"
+                  />
+                </Link>
               </div>
+
               <NavigationMenu className="" orientation="horizontal">
                 <NavigationMenuList className="">
 
