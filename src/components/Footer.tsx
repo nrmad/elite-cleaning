@@ -92,8 +92,8 @@ export function Footer(props: MyProps) {
           className="w-full h-[1px] bg-primary-foreground "
         />
 
-        <div className="w-full flex h-20 justify-between max-w-screen-xl text-primary-foreground ">
-          <div className="flex space-x-4">
+        <div className="w-full grid gap-8 grid-cols-2 sm:flex sm:h-20 p-8 sm:p-0  justify-between max-w-screen-xl text-primary-foreground ">
+          <div className="flex flex-col sm:flex-row sm:space-x-4">
             <div className="h-full flex items-center">
               <Link href="/facebook">
                 <TypographyP>Privacy Policy</TypographyP>
@@ -111,7 +111,7 @@ export function Footer(props: MyProps) {
               </Link>
             </div>
           </div>
-          <div className="flex items-center justify-center space-x-1">
+          <div className="flex sm:items-center justify-center space-x-1">
             <CopyrightIcon className="w-4 h-4" />
             <p className="text-xs">2024 Elite Cleaning. All Rights Reserved.</p>
           </div>

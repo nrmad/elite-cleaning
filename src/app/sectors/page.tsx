@@ -15,9 +15,9 @@ import { Separator } from "@/components/ui/separator";
 export default function Sectors() {
 
     return (
-        <main className="flex min-h-screen flex-col items-center">
+        <main className="flex min-h-screen flex-col items-center overflow-clip">
             <NavigationBar />
-            <div className="w-full from-theme to-muted from-5% to-95% bg-gradient-to-r flex flex-col items-center pt-20 pb-20">
+            <div className="w-full from-theme to-mutedTheme25 from-5% to-95% bg-gradient-to-r flex flex-col items-center pt-20 pb-20">
                 <AnimateComponent
                     // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
                     variants={{
@@ -75,7 +75,7 @@ export default function Sectors() {
 
 
 
-                        <div className="w-full grid grid-cols-3 grid-rows-2 gap-8 ">
+                        <div className="w-full grid sm:grid-cols-3 grid-rows-2 gap-8 ">
                             <WorkWidget url="/commercial-sector.jpg" alt="commercial-sector" title="Commercial" link="/sectors/commercial" />
                             <WorkWidget url="/education-sector.jpg" alt="education-sector" title="Education" />
                             <WorkWidget url="/leisure-sector.jpg" alt="leisure-sector" title="Leisure" />

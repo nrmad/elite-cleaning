@@ -24,7 +24,7 @@ export default function Contact() {
   // just noticed the NavigationBar should shrink on sticky motion
 
   return (
-    <main className="flex min-h-screen flex-col items-center">
+    <main className="flex min-h-screen flex-col items-center overflow-clip">
       <NavigationBar />
 
       <div className=" pt-20 pl-8 pr-8 pb-20 flex flex-col space-y-8 z-10 w-full max-w-screen-xl">
@@ -53,7 +53,7 @@ export default function Contact() {
                 end: { opacity: 1, y: 0 },
               }}
             >
-              <TypographyH4 className="text-center w-[525px] font-medium   ">
+              <TypographyH4 className="text-center sm:w-[525px] font-medium   ">
                 Get in touch with our team for information on our services,
                 project quotations and any other inquiries.
               </TypographyH4>
@@ -71,8 +71,8 @@ export default function Contact() {
           <div className="w-full h-5">
             <Separator className="w-full " />
           </div>
-          <div className="w-full flex space-x-16">
-            <div className="w-1/2">
+          <div className="w-full flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-16">
+            <div className="sm:w-1/2">
               <AnimateComponent
                 className="overflow-visible"
                 variants={{
@@ -107,7 +107,7 @@ export default function Contact() {
               </AnimateComponent>
             </div>
             <AnimateComponent
-              className="overflow-visible w-1/2 flex flex-col space-y-4 pt-4 "
+              className="overflow-visible m:w-1/2 flex flex-col space-y-4 pt-4 "
               variants={{
                 start: { opacity: 0 },
                 end: { opacity: 1 },

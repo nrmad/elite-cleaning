@@ -26,14 +26,14 @@ export default function HealthSafety() {
   // just noticed the NavigationBar should shrink on sticky motion
 
   return (
-    <main className="flex min-h-screen flex-col items-center">
+    <main className="flex min-h-screen flex-col items-center overflow-clip">
       <NavigationBar />
 
       <div className=" pt-20 pl-8 pr-8 pb-32 flex flex-col space-y-8 z-10 w-full max-w-screen-xl">
         <div className="w-full flex flex-col space-y-16 justify-center items-center ">
           <div className="w-full max-w-screen-md  flex  flex-col space-y-8    ">
-            <div className="w-full flex space-x-16">
-              <div className="w-2/3 flex flex-col space-y-8">
+            <div className="w-full flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-16">
+              <div className="sm:w-2/3 flex flex-col space-y-8">
                 <div className="flex flex-col">
                   <AnimateComponent
                     // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
@@ -85,7 +85,7 @@ export default function HealthSafety() {
                   </div>
                 </AnimateComponent>
               </div>
-              <div className="w-1/3">
+              <div className="sm:w-1/3">
                 <div className="w-full relative overflow-hidden rounded-sm">
                   <Image
                     height={400}
@@ -226,7 +226,7 @@ export default function HealthSafety() {
             <Separator />
 
             <AnimateComponent
-              className="w-full flex justify-between items-center "
+              className="w-full flex flex-col sm:flex-row justify-between items-center "
               transition={{ type: "spring", bounce: 0, duration: 0.6 }}
               variants={{
                 start: { opacity: 0, },

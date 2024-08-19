@@ -73,7 +73,7 @@ export default function FixedStepper() {
                         }}
                     >
                         <div className="h-fit sm:h-[700px] flex flex-col items-start my-4 text-primary rounded-md">
-                            <div className="flex justify-between items-center w-full"><h1 className="text-xl w-fit">{"Elites journey begins"}</h1> <p className="text-sm text-muted-foreground">Febuary 2000</p></div>
+                            <div className="flex justify-between items-center  space-x-4  w-full"><h1 className="text-xl w-fit">{"Elites journey begins"}</h1> <p className="text-sm text-muted-foreground">Febuary 2000</p></div>
                             <TypographyP>
                                 Elite Cleaning began with just the owners, who started from the ground up by handling every aspect of the cleaning work
                                 themselves. Without any outside assistance, they tackled each project with a deep commitment to excellence, ensuring
@@ -98,7 +98,7 @@ export default function FixedStepper() {
                         }}
                     >
                         <div className="h-fit sm:h-[700px] flex flex-col items-start my-4 text-primary rounded-md">
-                            <div className="flex justify-between items-center w-full"><h1 className="text-xl w-fit">{"Our move to Incorporation"}</h1> <p className="text-sm text-muted-foreground">March 2003</p></div>
+                            <div className="flex justify-between items-center  space-x-4  w-full"><h1 className="text-xl w-fit">{"Our move to Incorporation"}</h1> <p className="text-sm text-muted-foreground">March 2003</p></div>
 
                             <TypographyP>
                                 After establishing Elite Cleaning as a trusted, family-run business, we recognized the need to evolve to meet the growing demand for our services.
@@ -125,7 +125,7 @@ export default function FixedStepper() {
                         }}
                     >
                         <div className="h-fit sm:h-[400px] flex flex-col items-start my-4 text-primary rounded-md">
-                            <div className="flex justify-between items-center w-full"><h1 className="text-xl w-fit">{"Growth from hard work"}</h1> <p className="text-sm text-muted-foreground"> May 2008</p></div>
+                            <div className="flex justify-between items-center space-x-4 w-full"><h1 className="text-xl w-fit">{"Growth from hard work"}</h1> <p className="text-sm text-muted-foreground"> May 2008</p></div>
 
                             <TypographyP>
                                 Elite Cleaning&apos;s dedication to high-quality post-construction cleaning quickly earned the trust of our clients. From the start, the owners

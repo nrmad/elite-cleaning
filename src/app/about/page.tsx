@@ -26,7 +26,7 @@ export default function About() {
 
 
   return (
-    <main className="flex min-h-screen flex-col items-center">
+    <main className="flex min-h-screen flex-col items-center overflow-clip">
       <NavigationBar />
 
       <div className=" pt-20 pl-8 pr-8 pb-32 flex flex-col space-y-8 z-10 w-full max-w-screen-xl">
@@ -39,7 +39,7 @@ export default function About() {
                 end: { opacity: 1, y: 0 },
               }}
             >
-              <TypographyH2 className="text-center text-5xl w-[650px]">
+              <TypographyH2 className="text-center text-5xl sm:w-[650px]">
                 Elite is advancing excellence in builders cleaning.
               </TypographyH2>
             </AnimateComponent>
@@ -54,20 +54,20 @@ export default function About() {
             <Image src="/undraw-coffee-construction.svg" alt="about" fill />
           </AnimateComponent>
           <AnimateComponent
-            className="w-full flex space-x-16"
+            className="w-full flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-16"
             // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
             variants={{
               start: { opacity: 0, },
               end: { opacity: 1 },
             }}
           >
-            <div className="w-1/2">
+            <div className="sm:w-1/2">
               <TypographyH2 className="text-4xl">
                 We&apos;re elevating builders clean services for those who seek
                 exceptional quality.
               </TypographyH2>
             </div>
-            <div className="w-1/2 text-sm ">
+            <div className="sm:w-1/2 text-sm ">
               <TypographyP className="  leading-6">
                 Elite Cleaning started trading as a sole trader over 24 years
                 ago in 2000, by December 2006 having grown substantially we
@@ -105,8 +105,8 @@ export default function About() {
               <p className="text-xs">Experience </p>
               <Separator className="w-full" />
             </div>
-            <div className="w-full flex space-x-16">
-              <div className="w-1/2 ">
+            <div className="w-full flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-16">
+              <div className="sm:w-1/2 ">
                 <TypographyH2 className="text-4xl">
                   Fully trained experienced cleaning operatives and supervisors.
                 </TypographyH2>
@@ -137,11 +137,12 @@ export default function About() {
                   towers.
                 </TypographyP>
               </div>
-              <div className="w-1/2 flex flex-col ">
-                <div className="w-full flex-1  relative overflow-hidden rounded-sm ">
+              <div className="sm:w-1/2 flex flex-col  ">
+                <div className=" w-full flex-1 h-[280px] min-h-[280px] sm:h-full sm:min-h-full  relative overflow-hidden rounded-sm ">
                   <Image
                     src="/temp-team.png"
                     fill
+                    objectFit="cover"
                     alt="Elite team"
                     className=""
                   />
@@ -160,11 +161,11 @@ export default function About() {
               <TypographyH2 className="text-4xl">
                 Backed by an incredible team
               </TypographyH2>
-              <TypographyP className="text-sm leading-6 w-2/3">
+              <TypographyP className="text-sm leading-6 sm:w-2/3">
                 We are fortunate to work with one of the most dedicated teams of operatives and supervisors in the industry. Their excellent work speaks for itself.
               </TypographyP>
             </div>
-            <div className="w-full grid grid-cols-4 gap-5 ">
+            <div className="w-full grid grid-cols-2  sm:grid-cols-4 gap-5 ">
               <AvatarUser
                 firstname="Ian"
                 surname="Smith"

@@ -37,7 +37,7 @@ export default function Home() {
 
 
   return (
-    <main className="flex w-screen   min-h-screen flex-col items-center">
+    <main className="flex w-screen   min-h-screen flex-col items-center overflow-clip">
       <NavigationBar />
       <div className="w-full relative z-[-1] h-[300px] md:h-[400px] lg:h-[500px] 2xl:h-[600px] bg-[url('/banner1.jpg')] bg-center bg-cover ">
 

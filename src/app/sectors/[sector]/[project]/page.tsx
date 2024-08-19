@@ -33,7 +33,7 @@ export default function Project() {
     return (
         <main className="flex min-h-screen flex-col items-center">
             <NavigationBar />
-            <div className="w-full  from-theme to-muted from-5% to-95% bg-gradient-to-r flex flex-col items-center pt-20 pb-20">
+            <div className="w-full from-theme to-mutedTheme25 from-5% to-95% bg-gradient-to-r flex flex-col items-center pt-20 pb-20">
                 <AnimateComponent
                     // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
                     variants={{
@@ -77,7 +77,7 @@ export default function Project() {
 
                             <Separator />
 
-                            <div className="flex space-x-8 w-full">
+                            <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8 w-full">
                                 <div className="flex flex-col w-full">
                                     <TypographyH4>
                                         Glass Futures, St Helens
@@ -151,7 +151,7 @@ export default function Project() {
                                 <TypographyH4>
                                     Latest projects
                                 </TypographyH4>
-                                <div className="w-full grid grid-cols-3 grid-rows-1 gap-8 ">
+                                <div className="w-full grid grid-cols-1 sm:grid-cols-3 grid-rows-1 gap-8 ">
                                     <WorkWidget url="/commercial-sector.jpg" alt="commercial-sector" title="Glass Futures, St Helens" />
                                     <WorkWidget url="/education-sector.jpg" alt="education-sector" title="Bank House, Newcastle upon Tyne" />
                                     <WorkWidget url="/leisure-sector.jpg" alt="leisure-sector" title="Six, Centre Square, Middlesbrough" />
