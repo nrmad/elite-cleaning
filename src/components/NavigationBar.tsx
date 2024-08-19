@@ -231,7 +231,7 @@ export function NavigationBar() {
                   />
                 </Link>
               </div> */}
-              <div className="w-[150px] flex justify-start items-center overflow-hidden ">
+              <div className="w-[150px] h-[80px] flex justify-start items-center overflow-hidden border border-solid border-red-500">
                 <Link href={"/"}>
                   <Image
                     src="/elite.png"
