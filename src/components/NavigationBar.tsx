@@ -231,7 +231,7 @@ export function NavigationBar() {
                   />
                 </Link>
               </div> */}
-              <div className="w-[150px] h-[80px] flex justify-start items-center overflow-hidden border border-solid border-red-500">
+              <div className="w-[150px] h-[60px] flex justify-start items-center overflow-hidden ">
                 <Link href={"/"}>
                   <Image
                     src="/elite.png"
@@ -314,8 +314,8 @@ export function NavigationBar() {
                       </Link>
 
                     </NavigationMenuTrigger>
-                    <NavigationMenuContent className="bg-red-500/99 opacity-99">
-                      {/* <NavigationMenu.Sub defaultValue="sub1"> */}
+                    <NavigationMenuContent className=" opacity-99">
+                      {/* <NavigationMenu.Sub defaultValue="sub1"> bg-red-500/99*/}
 
                       <div className="w-[600px] flex opacity-100">
                         <ul className="w-full grid gap-1 p-4 md:grid-rows-2 md:grid-cols-3 opacity-100">

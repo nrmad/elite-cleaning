@@ -35,6 +35,7 @@ export default function Home() {
   // !!! TODO: add products and historic jobs
   // !!! TODO: GRADIENT OPACITY DELAY
 
+  // !!! TODO: OPTIMISE IMAGES AND SEO / FINISH API
 
   return (
     <main className="flex w-screen   min-h-screen flex-col items-center overflow-clip">
