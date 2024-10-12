@@ -21,6 +21,7 @@ import Image from "next/image";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { AvatarUser } from "@/components/AvatarUser";
 import { ImageWidget } from "@/components/ImageWidget";
+import Box from "@/components/Box";
 
 export default function Clients() {
   // just noticed the NavigationBar should shrink on sticky motion
@@ -86,124 +87,172 @@ export default function Clients() {
             </AnimateComponent>
           </div>
           <AnimateComponent
+            className="overflow-visible"
             // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
             variants={{
               start: { opacity: 0 },
               end: { opacity: 1 },
             }}
           >
-            <div className="w-full grid grid-cols-1 sm:grid-cols-5 gap-4 sm:gap-8">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-4 gap-4 sm:gap-8 overflow-visible ">
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://mclarengroup.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="mclaren"
+                    url="/mclaren-logo-testy.svg"
+                    className=""
 
-              <a href="https://mclarengroup.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="mclaren"
-                  url="/mclaren-logo-testy.svg"
-                  className=""
+                  // width={80}
+                  />
+                </a>
+              </Box>
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://www.bandk.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="bowmer-kirkland"
+                    url="/bowmer-kirkland-logo-cropped.svg"
+                    className=""
+                  />
+                </a>
+              </Box>
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://www.balfourbeatty.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="balfour-beatty"
+                    url="/balfour-beatty-logo.svg"
+                    className=""
+                  />
+                </a>
+              </Box>
 
-                // width={80}
-                />
-              </a>
-              <a href="https://www.bandk.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="bowmer-kirkland"
-                  url="/bowmer-kirkland-logo-cropped.svg"
-                  className=""
-                />
-              </a>
-              <a href="https://www.balfourbeatty.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="balfour-beatty"
-                  url="/balfour-beatty-logo.svg"
-                  className=""
-                />
-              </a>
-              <a href="https://www.skanska.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="skanska"
-                  url="/skanska-logo.svg"
-                  className="object-contain "
-                />
-              </a>
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://www.skanska.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="skanska"
+                    url="/skanska-logo.svg"
+                    className="object-contain "
+                  />
+                </a>
+              </Box>
 
-              <a href="https://www.kier.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="kier"
-                  url="/kier-logo.svg"
-                  className="object-contain 0"
-                />
-              </a>
-              <a href="https://www.johnsiskandson.com/uk" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="sisk"
-                  url="/sisk-logo.svg"
-                  className="object-contain "
-                />
-              </a>
-              <a href="https://www.bam.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="bam"
-                  url="/bam-logo.svg"
-                  className="object-contain"
-                />
-              </a>
-              <a href="https://www.costain.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="costain"
-                  url="/costain-logo.svg"
-                  className="object-contain "
-                />
-              </a>
-              <a href="https://www.redrow.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="redrow"
-                  url="/redrow-logo.svg"
-                  className="object-contain "
-                />
-              </a>
-              <a href="https://www.gallifordtry.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="galliford"
-                  url="/galliford-logo.svg"
-                  className="object-contain"
-                />
-              </a>
-              <a href="https://www.rydon.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="rydon"
-                  url="/rydon-logo.svg"
-                  className="object-contain "
-                />
-              </a>
-              <a href="https://www.lendlease.com/uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="lendlease"
-                  url="/lendlease-logo.svg"
-                  className="object-contain "
-                />
-              </a>
-              <a href="https://www.lindenhomes.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="lindenhomes"
-                  url="/lindenhomes-logo.svg"
-                  className="object-contain "
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://www.kier.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="kier"
+                    url="/kier-logo.svg"
+                    className="object-contain 0"
+                  />
+                </a>
+              </Box>
 
-                />
-              </a>
-              <a href="https://www.laingorourke.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="laing-o-rourke"
-                  url="/laing-o-rourke-logo.svg"
-                  className="object-contain "
-                />
-              </a>
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://www.johnsiskandson.com/uk" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="sisk"
+                    url="/sisk-logo.svg"
+                    className="object-contain "
+                  />
+                </a>
+              </Box>
 
-              <a href="https://uk.vinci-construction.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
-                <ImageWidget
-                  name="vinci"
-                  url="/vinci-logo.svg"
-                  className="object-contain "
-                />
-              </a>
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://www.bam.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="bam"
+                    url="/bam-logo.svg"
+                    className="object-contain"
+                  />
+                </a>
+              </Box>
+
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://www.costain.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="costain"
+                    url="/costain-logo.svg"
+                    className="object-contain "
+                  />
+                </a>
+              </Box>
+
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://www.redrow.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="redrow"
+                    url="/redrow-logo.svg"
+                    className="object-contain "
+                  />
+                </a>
+              </Box>
+
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://www.gallifordtry.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="galliford"
+                    url="/galliford-logo.svg"
+                    className="object-contain"
+                  />
+                </a>
+              </Box>
+
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://www.rydon.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="rydon"
+                    url="/rydon-logo.svg"
+                    className="object-contain "
+                  />
+                </a>
+              </Box>
+
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://www.lendlease.com/uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="lendlease"
+                    url="/lendlease-logo.svg"
+                    className="object-contain "
+                  />
+                </a>
+              </Box>
+
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://www.lindenhomes.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="lindenhomes"
+                    url="/lindenhomes-logo.svg"
+                    className="object-contain "
+
+                  />
+                </a>
+              </Box>
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://www.laingorourke.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="laing-o-rourke"
+                    url="/laing-o-rourke-logo.svg"
+                    className="object-contain "
+                  />
+                </a>
+              </Box>
+
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://uk.vinci-construction.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="vinci"
+                    url="/vinci-logo.svg"
+                    className="object-contain "
+                  />
+                </a>
+              </Box>
+              <Box className="w-full h-44 flex items-center justify-center hover:bg-muted">
+                <a href="https://www.willmottdixon.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+                  <ImageWidget
+                    name="willmott-dixon"
+                    url="/willmott-dixon.png"
+                    className="object-contain"
+                  />
+                </a>
+              </Box>
 
             </div>
           </AnimateComponent>

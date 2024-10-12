@@ -15,11 +15,14 @@ import { cn } from "@/lib/utils";
 import { Montserrat } from "next/font/google";
 import Image from "next/image";
 import { Building2, CalendarCheck, Droplet, Droplets, HardHat, IterationCcw, IterationCw, PackageCheck, PaintBucket, Sparkles, UsersRound } from "lucide-react";
-import { Card } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import ReviewWidget from "@/components/ReviewWidget";
 import { Step, StepItem, Stepper, useStepper } from "@/components/stepper";
 import { Button } from "@/components/ui/button";
 import FixedStepper from "@/components/FixedStepper";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+import AutoCarousel from "@/components/AutoCarousel";
+import { Separator } from "@/components/ui/separator";
 
 const montserrat = Montserrat({ weight: "400", subsets: ["latin"] });
 
@@ -30,12 +33,17 @@ const montserrat = Montserrat({ weight: "400", subsets: ["latin"] });
 
 export default function Home() {
 
+
   // animate reviews and services
   // !!! TODO: improve logo sizing to be identical
   // !!! TODO: add products and historic jobs
   // !!! TODO: GRADIENT OPACITY DELAY
 
   // !!! TODO: OPTIMISE IMAGES AND SEO / FINISH API
+
+  // !!!TODO: SHORTCUT TO JOBS AT THE BOTTOM MAYBE
+
+  // !!!TODO: A GET QUOTE FORM WOULD BE NICE
 
   return (
     <main className="flex w-screen   min-h-screen flex-col items-center overflow-clip">
@@ -239,9 +247,207 @@ export default function Home() {
           </div>
 
 
-          <div className="flex w-full flex-col">
+          {/* <div className="flex w-full flex-col">
             <FixedStepper />
-          </div>
+          </div> */}
+
+          {/**
+           * LOGO BAR
+           */}
+
+
+          {/**
+           * ADVANTAGES PAREXEL UI EXAMPLE / willmot dixson
+           */}
+
+
+        </div>
+      </div>
+
+      <div className="w-full h-fit relative">
+        <div className="left-0 top-0 bottom-0 w-52 absolute bg-gradient-to-r from-white/100 via-white/10 to-transparent z-50" />
+        <div className="right-0 top-0 bottom-0 w-52 absolute bg-gradient-to-l from-white/100 via-white/10 to-transparent z-50" />
+
+        <AutoCarousel className="lg:basis-60" items={[
+          <a href="https://mclarengroup.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="mclaren"
+              url="/mclaren-logo-testy.svg"
+              className=""
+            />
+          </a>,
+          <a href="https://www.bandk.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="bowmer-kirkland"
+              url="/bowmer-kirkland-logo-cropped.svg"
+              className=""
+            />
+          </a>,
+          <a href="https://www.balfourbeatty.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="balfour-beatty"
+              url="/balfour-beatty-logo.svg"
+              className=""
+            />
+          </a>,
+          <a href="https://www.skanska.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="skanska"
+              url="/skanska-logo.svg"
+              className="object-contain"
+            />
+          </a>,
+          <a href="https://www.kier.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="kier"
+              url="/kier-logo.svg"
+              className="object-contain 0"
+            />
+          </a>,
+          <a href="https://www.johnsiskandson.com/uk" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="sisk"
+              url="/sisk-logo.svg"
+              className="object-contain"
+            />
+          </a>,
+          <a href="https://www.bam.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="bam"
+              url="/bam-logo.svg"
+              className="object-contain"
+            />
+          </a>,
+          <a href="https://www.costain.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="costain"
+              url="/costain-logo.svg"
+              className="object-contain"
+            />
+          </a>,
+          <a href="https://www.redrow.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="redrow"
+              url="/redrow-logo.svg"
+              className="object-contain"
+            />
+          </a>,
+          <a href="https://www.gallifordtry.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="galliford"
+              url="/galliford-logo.svg"
+              className="object-contain"
+            />
+          </a>,
+          <a href="https://www.rydon.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="rydon"
+              url="/rydon-logo.svg"
+              className="object-contain"
+            />
+          </a>,
+          <a href="https://www.lendlease.com/uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="lendlease"
+              url="/lendlease-logo.svg"
+              className="object-contain"
+            />
+          </a>,
+          <a href="https://www.lindenhomes.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="lindenhomes"
+              url="/lindenhomes-logo.svg"
+              className="object-contain"
+            />
+          </a>,
+          <a href="https://www.laingorourke.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="laing-o-rourke"
+              url="/laing-o-rourke-logo.svg"
+              className="object-contain"
+            />
+          </a>,
+          <a href="https://uk.vinci-construction.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="vinci"
+              url="/vinci-logo.svg"
+              className="object-contain"
+            />
+          </a>,
+          <a href="https://www.willmottdixon.co.uk/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
+            <ImageWidget
+              name="willmott-dixon"
+              url="/willmott-dixon.png"
+              className="object-contain"
+            />
+          </a>,
+
+        ]} />
+      </div>
+
+      <div className="pt-32 pl-4 pr-4 sm:pl-8 sm:pr-8 pb-32 flex flex-col space-y-8 z-10 w-full max-w-screen-xl">
+        <div className="w-full flex flex-col space-y-16 sm:space-y-32 justify-center">
+
+          <AnimateComponent
+            className="w-full justify-center"
+            transition={{ type: "spring", bounce: 0, duration: 0.6 }}
+            variants={{
+              start: { opacity: 0, y: 25 },
+              end: { opacity: 1, y: 0 },
+            }}
+          >
+            <div className="w-full flex flex-col space-y-8">
+              <div className="flex space-x-4 items-center w-full">
+                <div className="flex flex-1 items-center"><Separator /></div> <div>How it works</div>  <div className="flex flex-1"><Separator /></div>
+              </div>
+              <div className="w-full flex space-x-8">
+                <div className="w-1/3 flex items-start">
+                  <TypographyH3 >Get a custom quote</TypographyH3>
+                </div>
+                <div className="w-2/3">
+                  <TypographyP>
+
+                    Tell us about the job, and we&apos;ll provide a comprehensive, customized quote tailored to the scope of work and the specific tasks required for your project.
+                    Once we have gathered all the necessary details, our team will carefully assess your needs and deliver a personalized price that reflects both the scale and
+                    complexity of the work involved, ensuring you receive an accurate and fair estimate.
+                  </TypographyP>
+                </div>
+              </div>
+              <div className="flex items-center w-full">
+                <Separator />
+              </div>
+              <div className="w-full flex space-x-8">
+                <div className="w-1/3 flex items-start">
+                  <TypographyH3 >Commencement of works</TypographyH3>
+                </div>
+                <div className="w-2/3">
+                  <TypographyP>
+                    We will collaborate closely with you, aligning our services to the site program to ensure everything runs smoothly. By working together according to the building
+                    schedule, we&apos;ll provide a quality clean across all areas, ensuring each stage of the project meets the highest standards of cleanliness and readiness for the
+                    next phase.
+                  </TypographyP>
+                </div>
+              </div>
+              <div className="flex items-center w-full">
+                <Separator />
+              </div>
+              <div className="w-full flex space-x-8">
+                <div className="w-1/3 flex items-start">
+                  <TypographyH3 >Approval of quality</TypographyH3>
+                </div>
+                <div className="w-2/3">
+                  <TypographyP>
+                    The final step involves a detailed inspection of all areas covered in the itemized scope of works. Each section is carefully reviewed to ensure it meets the
+                    agreed-upon standards of quality. This thorough inspection process allows for the sign-off of completed tasks, ensuring that every aspect of the job has been
+                    completed to the highest level.
+                  </TypographyP>
+                </div>
+              </div>
+              <div className="flex items-center w-full">
+                <Separator />
+              </div>
+            </div>
+          </AnimateComponent>
 
 
           <div className="w-full flex flex-col  space-y-16 justify-center items-center  ">
@@ -326,7 +532,7 @@ export default function Home() {
           </div>
 
         </div>
-      </div>
+      </div >
       <div className="w-full space-y-32">
         <AnimateComponent
           transition={{ type: "spring", bounce: 0, duration: 0.6 }}
@@ -335,44 +541,80 @@ export default function Home() {
             end: { opacity: 1 },
           }}
         >
-          <div className="w-full relative p-4 sm:p-8 flex sm:space-x-4  bg-[url('/construction4.jpg')] bg-bottom bg-cover ">
+          <div className="w-full relative  sm:py-8 flex   bg-[url('/construction4.jpg')] bg-bottom bg-cover ">
             <div className="absolute top-0 left-0 right-0 bottom-0 bg-black opacity-60" />
 
-            <ReviewWidget
-              className="w-full sm:w-1/3 md:h-64 text-primary-foreground justify-between  "
-              name={"Kavishnan Jeyarajah"}
-              role={"Site Manager"}
-              company={"John Sisk"}
-              variant={"Welfare Cleaning (Wembley)"}>
-              I have managed Elite with the welfare management and I would have no
-              problem recommending them. They have also been the teams no 1
-              builders clean contractor over the years for Sisk on past projects
-              (December 2023)
-            </ReviewWidget>
+            <AutoCarousel className="lg:basis-1/3" items={[
+              <ReviewWidget
+                className="w-full md:h-64 text-primary-foreground justify-between"
+                name={"Kavishnan Jeyarajah"}
+                role={"Site Manager"}
+                company={"John Sisk"}
+                variant={"Welfare Cleaning (Wembley)"}>
+                I have managed Elite with the welfare management and I would have no
+                problem recommending them. They have also been the teams no 1
+                builders clean contractor over the years for Sisk on past projects
+                (December 2023)
+              </ReviewWidget>,
+              <ReviewWidget
+                className="w-full hidden sm:flex   md:h-64 text-primary-foreground justify-between  "
+                name={"Daniel Makell"}
+                role={"Project Director"}
+                company={"John Sisk"}
+                variant={"Welfare Cleaning (Wembley)"}>
+                Elite are our &apos;go to&apos; builder clean contractor. They have helped us
+                deliver over 2000 apartments here in recent years as well as
+                managing the site welfare cleaning. Highly recommended (December
+                2023)
+              </ReviewWidget>,
+              <ReviewWidget
+                className="w-full  hidden sm:flex  md:h-64 text-primary-foreground justify-between  "
+                name={"Daniel Makell"}
+                role={"Project Director"}
+                company={"John Sisk"}
+                variant={"Welfare Cleaning (Wembley)"}>
+                Elite are our &apos;go to&apos; builder clean contractor. They have helped us
+                deliver over 2000 apartments here in recent years as well as
+                managing the site welfare cleaning. Highly recommended (December
+                2023)
+              </ReviewWidget>,
+              <ReviewWidget
+                className="w-full md:h-64 text-primary-foreground justify-between  "
+                name={"Kavishnan Jeyarajah"}
+                role={"Site Manager"}
+                company={"John Sisk"}
+                variant={"Welfare Cleaning (Wembley)"}>
+                I have managed Elite with the welfare management and I would have no
+                problem recommending them. They have also been the teams no 1
+                builders clean contractor over the years for Sisk on past projects
+                (December 2023)
+              </ReviewWidget>,
+              <ReviewWidget
+                className="w-full hidden sm:flex   md:h-64 text-primary-foreground justify-between  "
+                name={"Daniel Makell"}
+                role={"Project Director"}
+                company={"John Sisk"}
+                variant={"Welfare Cleaning (Wembley)"}>
+                Elite are our &apos;go to&apos; builder clean contractor. They have helped us
+                deliver over 2000 apartments here in recent years as well as
+                managing the site welfare cleaning. Highly recommended (December
+                2023)
+              </ReviewWidget>,
+              <ReviewWidget
+                className="w-full  hidden sm:flex  md:h-64 text-primary-foreground justify-between  "
+                name={"Daniel Makell"}
+                role={"Project Director"}
+                company={"John Sisk"}
+                variant={"Welfare Cleaning (Wembley)"}>
+                Elite are our &apos;go to&apos; builder clean contractor. They have helped us
+                deliver over 2000 apartments here in recent years as well as
+                managing the site welfare cleaning. Highly recommended (December
+                2023)
+              </ReviewWidget>
+            ]} />
 
-            <ReviewWidget
-              className="w-full hidden sm:flex sm:w-1/3  md:h-64 text-primary-foreground justify-between  "
-              name={"Daniel Makell"}
-              role={"Project Director"}
-              company={"John Sisk"}
-              variant={"Welfare Cleaning (Wembley)"}>
-              Elite are our &apos;go to&apos; builder clean contractor. They have helped us
-              deliver over 2000 apartments here in recent years as well as
-              managing the site welfare cleaning. Highly recommended (December
-              2023)
-            </ReviewWidget>
 
-            <ReviewWidget
-              className="w-full  hidden sm:flex sm:w-1/3 md:h-64 text-primary-foreground justify-between  "
-              name={"Daniel Makell"}
-              role={"Project Director"}
-              company={"John Sisk"}
-              variant={"Welfare Cleaning (Wembley)"}>
-              Elite are our &apos;go to&apos; builder clean contractor. They have helped us
-              deliver over 2000 apartments here in recent years as well as
-              managing the site welfare cleaning. Highly recommended (December
-              2023)
-            </ReviewWidget>
+
 
           </div>
         </AnimateComponent>

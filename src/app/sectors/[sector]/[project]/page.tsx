@@ -18,6 +18,7 @@ import { Separator } from "@/components/ui/separator";
 import React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
+import AutoCarousel from "@/components/AutoCarousel";
 
 
 export default function Project() {
@@ -119,6 +120,17 @@ export default function Project() {
                                 </Box>
                             </div>
                             <div className="flex w-full">
+                                {/* <AutoCarousel snap={true} items={
+                                    Array.from({ length: 5 }).map((_, index) => (
+
+                                        <Card className="rounded-none">
+                                            <CardContent className="flex aspect-square items-center justify-center p-6 ">
+                                                <span className="text-3xl font-semibold">{index + 1}</span>
+                                            </CardContent>
+                                        </Card>
+
+                                    ))
+                                } /> */}
                                 <Carousel
                                     plugins={[plugin.current]}
                                     className="w-full "
@@ -141,8 +153,6 @@ export default function Project() {
                                             </CarouselItem>
                                         ))}
                                     </CarouselContent>
-                                    {/* <CarouselPrevious />
-                                    <CarouselNext /> */}
                                 </Carousel>
                             </div>
 
