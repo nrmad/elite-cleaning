@@ -344,10 +344,10 @@ export function NavigationBar() {
                             >Health</NavigationMenuLink>
                           </Link>
 
-                          <Link href="/sectors/accommodation" passHref>
-                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/accommodation' ? "text-black" : "")}
+                          <Link href="/sectors/residential" passHref>
+                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/residential' ? "text-black" : "")}
                             >
-                              Accommodation
+                              Residential
                             </NavigationMenuLink>
                           </Link>
 
@@ -355,9 +355,9 @@ export function NavigationBar() {
                 Student accommodation
               </NavigationMenuLink> */}
                           {/* <NavigationMenuLink>Residential</NavigationMenuLink> */}
-                          <Link href="/sectors/retail" passHref>
-                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/retail' ? "text-black" : "")}
-                            >Retail</NavigationMenuLink>
+                          <Link href="/sectors/hospitality" passHref>
+                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "cursor-pointer w-full flex justify-start", pathname === '/sectors/hospitality' ? "text-black" : "")}
+                            >Hospitality</NavigationMenuLink>
                           </Link>
 
                         </ul>

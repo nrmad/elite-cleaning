@@ -8,14 +8,15 @@ interface PropTypes {
     role: string;
     company: string;
     variant: string;
+    clamp?: boolean;
     className?: string;
 }
 
-export default function ReviewWidget({ children, name, role, company, variant, className = "" }: PropTypes) {
+export default function ReviewWidget({ children, name, role, company, variant, className = "", clamp = false }: PropTypes) {
 
     return (
         <Box className={cn(" flex flex-col p-8 ", className)}>
-            <TypographyP>
+            <TypographyP className={clamp ? "line-clamp-4  break-normal" : ""}>
                 {children}
             </TypographyP>
             <div className="flex flex-col space-y-1">

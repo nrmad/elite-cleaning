@@ -2,6 +2,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { cn } from '@/lib/utils'
+import ReactQueryProvider from '@/lib/ReactQueryProvider'
+import { NavigationBar } from '@/components/NavigationBar'
+import { Footer } from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,7 +20,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" >
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className="flex w-screen   min-h-screen flex-col items-center overflow-clip">
+          <NavigationBar />
+          {children}
+        </main >
+        <Footer />
+      </body>
     </html>
   )
 }

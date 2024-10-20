@@ -26,8 +26,9 @@ export default function About() {
 
 
   return (
-    <main className="flex w-screen   min-h-screen flex-col items-center overflow-clip ">
-      <NavigationBar />
+    <>
+      {/* <main className="flex w-screen   min-h-screen flex-col items-center overflow-clip ">
+      <NavigationBar /> */}
 
       <div className=" pt-20 pl-8 pr-8 pb-32 flex flex-col space-y-8 z-10 w-full max-w-screen-xl">
         <div className="w-full flex flex-col space-y-32 justify-center ">
@@ -244,8 +245,9 @@ export default function About() {
           </div>
         </div>
       </div>
-      <Footer />
-    </main>
+      {/* <Footer />
+    </main> */}
+    </>
   );
 }
 

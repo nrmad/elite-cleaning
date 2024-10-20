@@ -14,6 +14,8 @@ interface PropTypes {
 
 export default function WorkWidget({ title, url, alt, link }: PropTypes) {
 
+    console.log(link)
+
     const router = useRouter()
 
     const navigate = () => {

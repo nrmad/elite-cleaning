@@ -16,12 +16,11 @@ import Autoplay from "embla-carousel-autoplay"
 
 
 interface PropTypes {
-    snap?: boolean;
     items: React.ReactNode[];
     className?: string;
 }
 
-export default function AutoCarousel({ items, className = "", snap = false }: PropTypes) {
+export default function AutoCarousel({ items, className = "" }: PropTypes) {
 
 
     const plugin = React.useRef(

@@ -19,9 +19,13 @@ import React from "react";
 import Autoplay from "embla-carousel-autoplay";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import AutoCarousel from "@/components/AutoCarousel";
+import { useQuery } from "@tanstack/react-query";
+import { fetchProject } from "@/lib/fetchProject";
+import { capitalize, valueFormatter } from "@/utils/helpers";
+import Loader from "@/components/Loader";
 
 
-export default function Project() {
+export default function Project({ params: { project: projectId, sector } }: { params: { project: string, sector: string } }) {
 
 
     const searchParams = useSearchParams()
@@ -31,9 +35,17 @@ export default function Project() {
         Autoplay({ delay: 2000 })
     )
 
+
+    const { data: project, error, isLoading } = useQuery({ queryKey: ['project', projectId], queryFn: () => fetchProject(projectId) })
+
+    if (isLoading) return (<Loader />)
+
+    const { title, contractor, description, value, media, scope_of_works } = project
+
     return (
-        <main className="flex min-h-screen flex-col items-center">
-            <NavigationBar />
+        <>
+            {/* <main className="flex min-h-screen flex-col items-center">
+            <NavigationBar /> */}
             <div className="w-full from-theme to-mutedTheme25 from-5% to-95% bg-gradient-to-r flex flex-col items-center pt-20 pb-20">
                 <AnimateComponent
                     // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
@@ -43,7 +55,7 @@ export default function Project() {
                     }}
                 >
                     <TypographyH2 className="text-center text-4xl text-primary-foreground">
-                        Glass Futures, St Helens
+                        {title}
                     </TypographyH2>
                 </AnimateComponent>
             </div>
@@ -66,11 +78,11 @@ export default function Project() {
                                     </BreadcrumbItem>
                                     <BreadcrumbSeparator />
                                     <BreadcrumbItem>
-                                        <BreadcrumbLink href="/sectors/commercial">Commercial</BreadcrumbLink>
+                                        <BreadcrumbLink href={`/sectors/${sector}`}>{capitalize(sector)}</BreadcrumbLink>
                                     </BreadcrumbItem>
                                     <BreadcrumbSeparator />
                                     <BreadcrumbItem>
-                                        <BreadcrumbPage >Glass Futures, St Helens</BreadcrumbPage>
+                                        <BreadcrumbPage >{title}</BreadcrumbPage>
                                     </BreadcrumbItem>
                                 </BreadcrumbList>
                             </Breadcrumb>
@@ -81,25 +93,15 @@ export default function Project() {
                             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8 w-full">
                                 <div className="flex flex-col w-full">
                                     <TypographyH4>
-                                        Glass Futures, St Helens
+                                        {title}
                                     </TypographyH4>
                                     <TypographyP>
-                                        The high-end development provides 496 studio apartments across two connected blocks of 12 and 14-storeys.
-                                        Communal study, fitness, social areas, courtyard gardens and a 102 cycle storage bays are also included in the scheme.
+                                        {description}
                                     </TypographyP>
                                     <TypographyP>Our scope of works includes:</TypographyP>
                                     <ul className="list-disc pl-4 pt-2">
-                                        <li>Management of design from RIBA Stage 2 partnering with the client to develop the high-quality,
-                                            bespoke development</li>
-                                        <li>Supporting the client to achieve funding for the project
-                                        </li>
-                                        <li>Accelerated pre-construction programme and phased handover strategy to facilitate the arrival of students
-                                            in September 2022 for the new academic year
-                                        </li>
-                                        <li>Enabling works included demolition of existing buildings
-                                        </li>
-                                        <li>The-storey curved podium at ground level with two sculptural towers above
-                                        </li>
+                                        {scope_of_works.map(({ details }: { details: string }, index: number) => <li>{details}</li>)}
+
                                     </ul>
 
                                 </div>
@@ -110,11 +112,13 @@ export default function Project() {
                                     <Separator />
                                     <div className="grid grid-rows-3 grid-cols-2 gap-x-4 gap-y-1 ">
                                         <p className=" text-xs font-medium ">VALUE</p>
-                                        <p className="text-xs font-medium"> £41.8M</p>
+                                        <p className="text-xs font-medium">£{valueFormatter(value)}</p>
                                         <p className=" text-xs font-medium">COMPLETED</p>
-                                        <p className=" text-xs font-medium"> JUNE 2023</p>
-                                        <p className=" text-xs font-medium">CONTRACT</p>
-                                        <p className=" text-xs font-medium">108 WEEKS</p>
+                                        <p className=" text-xs font-medium"> 2022</p>
+                                        <p className=" text-xs font-medium">CONTRACTOR</p>
+                                        <p className=" text-xs font-medium">{contractor.toUpperCase()}</p>
+                                        {/* <p className=" text-xs font-medium">CONTRACT</p>
+                                        <p className=" text-xs font-medium">108 WEEKS</p> */}
                                     </div>
 
                                 </Box>
@@ -133,15 +137,27 @@ export default function Project() {
                                 } /> */}
                                 <Carousel
                                     plugins={[plugin.current]}
-                                    className="w-full "
-                                    onMouseEnter={plugin.current.stop}
-                                    onMouseLeave={plugin.current.reset}
+                                    className="w-full my-4"
+                                    onMouseEnter={() => plugin.current.stop()}
+                                    onMouseLeave={() => plugin.current.play()}
                                     opts={{
+                                        loop: true,
                                         align: "start",
                                     }}
                                 >
                                     <CarouselContent>
-                                        {Array.from({ length: 5 }).map((_, index) => (
+                                        {media.map(({ url, alt }: { url: string, alt: string }, index: number) => (
+                                            <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3 cursor-grab">
+                                                <div className="">
+                                                    <Card className="rounded-none">
+                                                        <CardContent className="relative flex  h-80 items-center justify-center p-6 ">
+                                                            <Image src={url} alt={alt} fill className="object-cover aspect-square" />
+                                                        </CardContent>
+                                                    </Card>
+                                                </div>
+                                            </CarouselItem>
+                                        ))}
+                                        {/* {Array.from({ length: 5 }).map((_, index) => (
                                             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                                                 <div className="">
                                                     <Card className="rounded-none">
@@ -151,7 +167,7 @@ export default function Project() {
                                                     </Card>
                                                 </div>
                                             </CarouselItem>
-                                        ))}
+                                        ))} */}
                                     </CarouselContent>
                                 </Carousel>
                             </div>
@@ -177,8 +193,9 @@ export default function Project() {
                 </div>
 
             </div>
-            <Footer />
-        </main>
+            {/* <Footer />
+        </main> */}
+        </>
     )
 }
 

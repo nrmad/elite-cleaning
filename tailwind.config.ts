@@ -1,15 +1,14 @@
-import type { Config } from "tailwindcss"
-import plugin from 'tailwindcss/plugin';
-
+import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -20,8 +19,9 @@ const config = {
       },
     },
     extend: {
-
-      
+      lineClamp: {
+        4: "4",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -98,17 +98,21 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate"),
-  plugin(function ({ addUtilities }) {
-    addUtilities({
-      '.clip-complex-polygon': {
-        clipPath: 'polygon(100% 77%,0% 100%,100% 100%)'
-        ,
-      },
-    });
-  }),
+  plugins: [
+    require("@tailwindcss/line-clamp"),
+    require("tailwindcss-animate"),
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        ".clip-complex-polygon": {
+          clipPath: "polygon(100% 77%,0% 100%,100% 100%)",
+        },
+        ".clip-review-polygon": {
+          clipPath:
+            "polygon(65% 43%, 65% 55%, 56% 55%, 56% 0, 48% 8%, 48% 68%, 41% 68%, 41% 10%, 32% 10%, 32% 41%, 24% 41%, 24% 26%, 16% 34%, 16% 100%, 9% 100%, 9% 37%, 0 46%, 0 100%, 97% 100%, 97% 43%, 89% 32%, 89% 45%, 89% 81%, 81% 81%, 81% 14%, 74% 22%, 74% 43%)",
+        },
+      });
+    }),
+  ],
+} satisfies Config;
 
-],
-} satisfies Config
-
-export default config
+export default config;

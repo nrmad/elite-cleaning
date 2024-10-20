@@ -1,3 +1,4 @@
+
 import AnimateComponent from "@/components/AnimateComponent";
 import Box from "@/components/Box";
 import { Footer } from "@/components/Footer";
@@ -10,13 +11,18 @@ import WorkWidget from "./WorkWidget";
 import { Breadcrumb, BreadcrumbEllipsis, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/components/ui/breadcrumb";
 import { DropdownMenu, DropdownMenuTrigger, DropdownMenuContent, DropdownMenuItem } from "@radix-ui/react-dropdown-menu";
 import { Separator } from "@/components/ui/separator";
+import { useQuery } from "@tanstack/react-query";
+import { fetchSector } from "@/lib/fetchSector";
+
 
 
 export default function Sectors() {
 
+
     return (
-        <main className="flex min-h-screen flex-col items-center overflow-clip">
-            <NavigationBar />
+        <>
+            {/* <main className="flex min-h-screen flex-col items-center overflow-clip">
+            <NavigationBar /> */}
             <div className="w-full from-theme to-mutedTheme25 from-5% to-95% bg-gradient-to-r flex flex-col items-center pt-20 pb-20">
                 <AnimateComponent
                     // transition={{ type: "spring", bounce: 0, duration: 0.6 }}
@@ -77,17 +83,18 @@ export default function Sectors() {
 
                         <div className="w-full grid sm:grid-cols-3 grid-rows-2 gap-8 ">
                             <WorkWidget url="/commercial-sector.jpg" alt="commercial-sector" title="Commercial" link="/sectors/commercial" />
-                            <WorkWidget url="/education-sector.jpg" alt="education-sector" title="Education" />
-                            <WorkWidget url="/leisure-sector.jpg" alt="leisure-sector" title="Leisure" />
-                            <WorkWidget url="/health-sector.jpg" alt="health-sector" title="Health" />
-                            <WorkWidget url="/accommodation-sector.jpg" alt="accommodation-sector" title="Accommodation" />
-                            <WorkWidget url="/retail-sector.jpg" alt="retail-sector" title="Retail" />
+                            <WorkWidget url="/education-sector.jpg" alt="education-sector" title="Education" link="/sectors/education" />
+                            <WorkWidget url="/leisure-sector.jpg" alt="leisure-sector" title="Leisure" link="/sectors/leisure" />
+                            <WorkWidget url="/health-sector.jpg" alt="health-sector" title="Health" link="/sectors/health" />
+                            <WorkWidget url="/residential-sector.jpg" alt="residential-sector" title="Residential" link="/sectors/residential" />
+                            <WorkWidget url="/hospitality-sector.jpg" alt="hospitality-sector" title="Hospitality" link="/sectors/hospitality" />
                         </div>
                     </AnimateComponent>
                 </div>
             </div>
-            <Footer />
-        </main>
+            {/* <Footer />
+        </main> */}
+        </>
     )
 }
 

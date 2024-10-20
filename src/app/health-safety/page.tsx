@@ -26,8 +26,9 @@ export default function HealthSafety() {
   // just noticed the NavigationBar should shrink on sticky motion
 
   return (
-    <main className="flex min-h-screen flex-col items-center overflow-clip">
-      <NavigationBar />
+    <>
+      {/* <main className="flex min-h-screen flex-col items-center overflow-clip">
+      <NavigationBar /> */}
 
       <div className=" pt-20 pl-8 pr-8 pb-32 flex flex-col space-y-8 z-10 w-full max-w-screen-xl">
         <div className="w-full flex flex-col space-y-16 justify-center items-center ">
@@ -267,8 +268,9 @@ export default function HealthSafety() {
           </div>
         </div>
       </div>
-      <Footer />
-    </main>
+      {/* <Footer />
+    </main> */}
+    </>
   );
 }
 
