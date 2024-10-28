@@ -27,15 +27,13 @@ export default function AutoCarousel({ items, className = "" }: PropTypes) {
         AutoScroll({ stopOnInteraction: false })
     )
 
-    //
     return (
         <Carousel
             opts={{ loop: true }}
             plugins={[plugin.current]}
-            className="w-full  [&>*]:h-full [&>*]:w-full  h-full "
+            className="w-full  [&>*]:h-full [&>*]:w-full  h-full"
             onMouseEnter={() => plugin.current.stop()}
             onMouseLeave={() => plugin.current.play(0)}
-
         >
             <CarouselContent className="h-full">
                 {items.map((item, index) => (
@@ -46,7 +44,6 @@ export default function AutoCarousel({ items, className = "" }: PropTypes) {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-
         </Carousel>
     )
 }

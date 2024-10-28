@@ -9,10 +9,11 @@ import { ProjectOverview } from "@/types/project";
 interface PropTypes {
     sectorId: number;
     sector: string;
-    projects: ProjectOverview[]
+    projects: ProjectOverview[];
+    pages: number;
 }
 
-export default function SectorList({ sectorId, sector, projects }: PropTypes) {
+export default function SectorList({ sectorId, sector, projects, pages }: PropTypes) {
 
     // const { data: projects, error, isLoading } = useQuery({ queryKey: ['sector', sectorId], queryFn: () => fetchSector(sectorId) })
 
@@ -21,16 +22,11 @@ export default function SectorList({ sectorId, sector, projects }: PropTypes) {
 
     return (
         <div className="w-full flex flex-col space-y-8">
-            <div className="w-full grid grid-cols-1 sm:grid-cols-3 grid-rows-2 gap-8 ">
+            <div className="w-full grid grid-cols-1 sm:grid-cols-3  gap-8 ">
                 {projects.map(({ media: [{ url, alt }], title, id }: ProjectOverview, index: number) =>
                     <WorkWidget url={url} alt={alt} title={title} link={`/sectors/${sector}/${id}`} />
                 )}
-                {/* <WorkWidget url="/commercial-sector.jpg" alt="commercial-sector" title="Glass Futures, St Helens" />
-                <WorkWidget url="/education-sector.jpg" alt="education-sector" title="Bank House, Newcastle upon Tyne" />
-                <WorkWidget url="/leisure-sector.jpg" alt="leisure-sector" title="Six, Centre Square, Middlesbrough" />
-                <WorkWidget url="/health-sector.jpg" alt="health-sector" title="Space Park, Leicester" />
-                <WorkWidget url="/accommodation-sector.jpg" alt="accommodation-sector" title="Old Granada Studios, Manchester" />
-                <WorkWidget url="/retail-sector.jpg" alt="retail-sector" title="Bank House, Newcastle upon Tyne" /> */}
+
 
             </div>
             <div className="w-full ">
@@ -39,7 +35,17 @@ export default function SectorList({ sectorId, sector, projects }: PropTypes) {
                         <PaginationItem>
                             <PaginationPrevious href="#" />
                         </PaginationItem>
-                        <PaginationItem>
+                        {
+                            [...Array(pages)].map((_, index) => {
+                                const page = index + 1
+                                return (
+                                    <PaginationItem>
+                                        <PaginationLink href={`?page=${page}`}>{page}</PaginationLink>
+                                    </PaginationItem>
+                                )
+                            })
+                        }
+                        {/* <PaginationItem>
                             <PaginationLink href="#">1</PaginationLink>
                         </PaginationItem>
                         <PaginationItem>
@@ -52,7 +58,7 @@ export default function SectorList({ sectorId, sector, projects }: PropTypes) {
                         </PaginationItem>
                         <PaginationItem>
                             <PaginationEllipsis />
-                        </PaginationItem>
+                        </PaginationItem> */}
                         <PaginationItem>
                             <PaginationNext href="#" />
                         </PaginationItem>

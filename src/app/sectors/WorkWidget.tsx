@@ -2,6 +2,7 @@
 
 import Box from "@/components/Box";
 import { TypographyH4 } from "@/components/ui/typographyH4";
+import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -10,11 +11,11 @@ interface PropTypes {
     url: string;
     alt: string;
     link?: string;
+    className?: string;
 }
 
-export default function WorkWidget({ title, url, alt, link }: PropTypes) {
+export default function WorkWidget({ title, url, alt, link, className = "" }: PropTypes) {
 
-    console.log(link)
 
     const router = useRouter()
 
@@ -24,7 +25,7 @@ export default function WorkWidget({ title, url, alt, link }: PropTypes) {
     }
 
     return (
-        <div className="h-80 cursor-pointer" onClick={navigate}>
+        <div className={cn("h-80 cursor-pointer", className)} onClick={navigate}>
             <Box className="  h-full w-full">
                 <div className="relative w-full h-full overflow-hidden " >
                     <Image src={url} alt={alt} fill className="object-cover" />

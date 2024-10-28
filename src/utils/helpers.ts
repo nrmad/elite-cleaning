@@ -11,3 +11,8 @@ export const valueFormatter = (value: number) => {
 export const capitalize = (value: string) => {
   return value.charAt(0).toUpperCase() + value.slice(1);
 };
+
+export const getYearFromDate = (date: string | Date): number => {
+  const parsedDate = new Date(date);
+  return parsedDate.getFullYear();
+};

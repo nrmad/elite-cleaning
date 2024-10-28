@@ -1,5 +1,5 @@
 export interface ProjectOverview {
-  id: string;
+  id: number;
   media: [{ url: string; alt: string }];
   title: string;
 }

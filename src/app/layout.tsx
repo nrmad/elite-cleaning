@@ -23,7 +23,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <main className="flex w-screen   min-h-screen flex-col items-center overflow-clip">
           <NavigationBar />
-          {children}
+          <ReactQueryProvider>
+            {children}
+          </ReactQueryProvider>
         </main >
         <Footer />
       </body>

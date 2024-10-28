@@ -27,6 +27,7 @@ import WorkWidget from "./sectors/WorkWidget";
 import { fetchReviews } from "@/lib/fetchReviews";
 import { useQuery } from "@tanstack/react-query";
 import { Review } from "@/types/review";
+import LatestList from "@/components/LatestList";
 
 const montserrat = Montserrat({ weight: "400", subsets: ["latin"] });
 
@@ -872,20 +873,7 @@ export default async function Home() {
 
 
 
-          <div className="flex flex-col w-full space-y-8">
-            <TypographyH4>
-              Latest projects
-            </TypographyH4>
-            <div className="w-full grid grid-cols-1 sm:grid-cols-3 grid-rows-1 gap-8 ">
-              <WorkWidget url="/commercial-sector.jpg" alt="commercial-sector" title="Glass Futures, St Helens" />
-              <WorkWidget url="/education-sector.jpg" alt="education-sector" title="Bank House, Newcastle upon Tyne" />
-              <WorkWidget url="/leisure-sector.jpg" alt="leisure-sector" title="Six, Centre Square, Middlesbrough" />
-
-            </div>
-            <div className="w-full flex items-center justify-center">
-              <Button variant="default">View all</Button>
-            </div>
-          </div>
+          <LatestList />
         </div>
       </div>
       {/* <Footer />

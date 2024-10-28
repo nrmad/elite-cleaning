@@ -21,8 +21,9 @@ import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbP
 import AutoCarousel from "@/components/AutoCarousel";
 import { useQuery } from "@tanstack/react-query";
 import { fetchProject } from "@/lib/fetchProject";
-import { capitalize, valueFormatter } from "@/utils/helpers";
+import { capitalize, getYearFromDate, valueFormatter } from "@/utils/helpers";
 import Loader from "@/components/Loader";
+import LatestList from "@/components/LatestList";
 
 
 export default function Project({ params: { project: projectId, sector } }: { params: { project: string, sector: string } }) {
@@ -40,7 +41,7 @@ export default function Project({ params: { project: projectId, sector } }: { pa
 
     if (isLoading) return (<Loader />)
 
-    const { title, contractor, description, value, media, scope_of_works } = project
+    const { title, completed, contractor, description, value, media, scope_of_works } = project
 
     return (
         <>
@@ -110,13 +111,13 @@ export default function Project({ params: { project: projectId, sector } }: { pa
                                         PROJECT INFORMATION
                                     </TypographyP>
                                     <Separator />
-                                    <div className="grid grid-rows-3 grid-cols-2 gap-x-4 gap-y-1 ">
+                                    <div className="grid grid-rows-3 grid-cols-2 gap-x-4 gap-y-1  ">
                                         <p className=" text-xs font-medium ">VALUE</p>
                                         <p className="text-xs font-medium">£{valueFormatter(value)}</p>
                                         <p className=" text-xs font-medium">COMPLETED</p>
-                                        <p className=" text-xs font-medium"> 2022</p>
+                                        <p className=" text-xs font-medium"> {getYearFromDate(completed)}</p>
                                         <p className=" text-xs font-medium">CONTRACTOR</p>
-                                        <p className=" text-xs font-medium">{contractor.toUpperCase()}</p>
+                                        <p className=" text-xs font-medium max-h-4">{contractor.toUpperCase()}</p>
                                         {/* <p className=" text-xs font-medium">CONTRACT</p>
                                         <p className=" text-xs font-medium">108 WEEKS</p> */}
                                     </div>
@@ -172,8 +173,8 @@ export default function Project({ params: { project: projectId, sector } }: { pa
                                 </Carousel>
                             </div>
 
-
-                            <div className="flex flex-col w-full space-y-8">
+                            <LatestList />
+                            {/* <div className="flex flex-col w-full space-y-8">
                                 <TypographyH4>
                                     Latest projects
                                 </TypographyH4>
@@ -186,7 +187,7 @@ export default function Project({ params: { project: projectId, sector } }: { pa
                                 <div className="w-full flex items-center justify-center">
                                     <Button variant="default">View all</Button>
                                 </div>
-                            </div>
+                            </div> */}
 
                         </div>
                     </AnimateComponent>

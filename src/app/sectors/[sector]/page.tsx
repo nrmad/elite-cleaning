@@ -49,7 +49,6 @@ export async function generateStaticParams() {
         { params: { sector: 'leisure' } },
         { params: { sector: 'hospitality' } }
     ]
-
 }
 
 
@@ -62,6 +61,8 @@ export default async function Sector({ params }: { params: { sector: string } })
 
     const projects = await fetchSector(id)
 
+
+    console.log(projects)
 
     return (
         <>
