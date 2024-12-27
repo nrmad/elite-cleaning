@@ -11,14 +11,29 @@ interface PropTypes {
     sector: string;
     projects: ProjectOverview[];
     pages: number;
+    page: number;
 }
 
-export default function SectorList({ sectorId, sector, projects, pages }: PropTypes) {
+export default function SectorList({ sectorId, sector, projects, pages, page }: PropTypes) {
 
     // const { data: projects, error, isLoading } = useQuery({ queryKey: ['sector', sectorId], queryFn: () => fetchSector(sectorId) })
 
     // console.log('here')
     // console.log(projects)
+
+
+
+    // const handlePageChange = (page: number) => {
+    //     router.push(`/sectors/${sector}?page=${page}`);
+    // };
+
+
+    const isFirstPage = page === 1;
+    const isLastPage = page === pages;
+
+    // console.log(page)
+    // console.log(pages)
+    // console.log(isLastPage)
 
     return (
         <div className="w-full flex flex-col space-y-8">
@@ -33,14 +48,24 @@ export default function SectorList({ sectorId, sector, projects, pages }: PropTy
                 <Pagination>
                     <PaginationContent>
                         <PaginationItem>
-                            <PaginationPrevious href="#" />
+                            <PaginationPrevious
+                                href={`/sectors/${sector}?page=${page - 1}`}
+                                onClick={(e) => isFirstPage && e.preventDefault()}
+                                className={isFirstPage ? "opacity-50 pointer-events-none" : ""}
+                                aria-disabled={isFirstPage}
+                            />
                         </PaginationItem>
                         {
                             [...Array(pages)].map((_, index) => {
-                                const page = index + 1
+                                const currentPage = index + 1
                                 return (
                                     <PaginationItem>
-                                        <PaginationLink href={`?page=${page}`}>{page}</PaginationLink>
+                                        <PaginationLink
+                                            href={`/sectors/${sector}?page=${currentPage}`}
+                                            onClick={(e) => currentPage === page && e.preventDefault()}
+                                            className={currentPage === page ? "font-bold pointer-events-none" : ""}
+                                            aria-current={currentPage === page ? "page" : undefined}
+                                        >{currentPage}</PaginationLink>
                                     </PaginationItem>
                                 )
                             })
@@ -60,7 +85,12 @@ export default function SectorList({ sectorId, sector, projects, pages }: PropTy
                             <PaginationEllipsis />
                         </PaginationItem> */}
                         <PaginationItem>
-                            <PaginationNext href="#" />
+                            <PaginationNext
+                                href={`/sectors/${sector}?page=${page + 1}`}
+                                onClick={(e) => isLastPage && e.preventDefault()}
+                                className={isLastPage ? "opacity-50 pointer-events-none" : ""}
+                                aria-disabled={isLastPage}
+                            />
                         </PaginationItem>
                     </PaginationContent>
                 </Pagination>

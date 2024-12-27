@@ -123,12 +123,12 @@ export default function Contact() {
 
 
       // Submit form along with the reCAPTCHA token
-      const response = await axios.post('/verify', { data: { captcha } });
+      const response = await axios.post('/api/contact/verify', { captcha: captcha });
       if (!response.data.success) {
         throw new Error('Captcha verification failed.');
       }
 
-      const contactResponse = await axios.post('/contact/inquiry', { data: { ...values } });
+      const contactResponse = await axios.post('/api/contact/inquiry', { data: { ...values } });
       if (!contactResponse.data.success) {
         throw new Error('Failed to submit contact form.');
       }

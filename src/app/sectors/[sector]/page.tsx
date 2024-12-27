@@ -52,17 +52,15 @@ export async function generateStaticParams() {
 }
 
 
-export default async function Sector({ params }: { params: { sector: string } }) {
-
+export default async function Sector({ params }: { params: { sector: string, page: string } }) {
 
     const sectorData = await getSectorData(params.sector)
 
+    const page = parseInt(params.page)
     const { id, sector, description, metrics, review } = sectorData
 
     const projects = await fetchSector(id)
 
-
-    console.log(projects)
 
     return (
         <>
@@ -129,7 +127,7 @@ export default async function Sector({ params }: { params: { sector: string } })
                         </div>
 
 
-                        <SectorList sectorId={id} sector={params.sector} projects={projects.results} />
+                        <SectorList sectorId={id} sector={params.sector} projects={projects.results} pages={projects.total_pages} page={page} />
 
                     </AnimateComponent>
                 </div>

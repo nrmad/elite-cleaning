@@ -281,7 +281,7 @@ export default async function Home() {
           <a key="mclaren" href="https://mclarengroup.com/" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center">
             <ImageWidget
               name="mclaren"
-              url="/mclaren-logo-testy.svg"
+              url="/mclaren-logo.png"
               className=""
             />
           </a>,
